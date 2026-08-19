@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Site WAF</title>
+  <style>
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; /* remove margens que podem quebrar o fundo */
+    background-image: url(img/fundoLogin.avif);
+    background-size: cover; /* faz a imagem cobrir toda a tela */
+    background-position: center; /* centraliza a imagem */
+    background-repeat: no-repeat; /* evita repetição */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* garante altura total da tela */
+    }
+    
+    .container {
+      max-width: 400px;
+      padding: 30px;
+      background: rgba(70, 68, 68, 0.4); /* transparência para o efeito de vidro */
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* sombra mais suave e profunda */
+      text-align: center;
+      color: white;
+      backdrop-filter: blur(10px); /* aplica o desfoque do fundo */
+      -webkit-backdrop-filter: blur(10px); /* compatibilidade com Safari */
+      border: 1px solid rgba(255, 255, 255, 0.2); /* borda sutil para efeito de vidro */
+    }
+    #login{
+      background: linear-gradient(135deg, #ff6f00, #8b01c1, #8e24aa, #42a5f5, #3c009d);
+      background-size: 400%;
+      background-position: 0% 50%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: movimentoDegrade 6s linear infinite;
+      
+    }
+    @keyframes movimentoDegrade {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    input[type='email'], input[type='password'] {
+      width: calc(100% - 22px);
+      background: rgba(70, 68, 68, 0.4); /* transparência para o efeito de vidro */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* sombra mais suave e profunda */
+      backdrop-filter: blur(10px); /* aplica o desfoque do fundo */
+      -webkit-backdrop-filter: blur(10px); /* compatibilidade com Safari */
+      border: 1px solid rgba(255, 255, 255, 0.2); /* borda sutil para efeito de vidro */
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 20px;
+      color: white;
+    }
+    button {
+      padding: 10px 30px;
+      background-color: #003771;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      transition: 0.6s ease;
+      padding: 10px 40px;
+      background-color: #0655a8;
+    }
+    .message {
+      color: red;
+      margin-top: 15px;
+    }
+    a {
+      color: rgb(177, 177, 177);
+      text-decoration: none;
+      margin-top: 20px;
+      display: block;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .fade {
+  opacity: 0;
+  transform: translateX(50px); /* começa vindo da esquerda */
+  transition: opacity 1s ease, transform 0.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+  </style>
+</head>
+<body>
+  <div class="container fade">
+    <h1 id="login" class="fade">Login</h1>
+    <p id="message" class="message"></p>
+
+    <form id="LoginForm" class="fade">
+      <input type="email" id="LoginEmail" placeholder="Email" required>
+      <input type="password" id="LoginPassword" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <a href="cadastro.html" class="fade">Não tem conta? Registre-se</a>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="js/firebase.js"></script>
+
+  <script>
+    document.getElementById('LoginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('LoginEmail').value;
+      const password = document.getElementById('LoginPassword').value;
+      await window.loginUser(email, password);
+    });
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>

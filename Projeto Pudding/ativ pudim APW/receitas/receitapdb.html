@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="receitaplc.css">
+    <title>Pudding</title>
+</head>
+<body>
+   <header>
+       <nav>
+           <div class="cabecalho">
+                <img class="logo" src="../imagens/logo.jpg" alt="logo">
+                <h1 class="titulo">Pudding</h1>
+                <ul class="menu">
+                    
+                    <li><a href="../historia.html" target="_parent">História do pudim</a></li>
+                    <li><a href="../tipos.html" target="_parent">Tipos de pudim</a></li>
+                    <li><a href="../receita.html">Receitas</a></li>
+                    <li><a href="../posp.html">Peça seu pudim</a></li>
+                    
+                </ul>
+            
+                
+            </div>
+       </nav>
+   </header> 
+   <ul>
+   <div id="ctt">
+    <li><a href="../ctt/contato.html">Contato</a></li>
+    <li><a href="../ctt/lojas.html">Lojas Próximas</a></li>
+    <li><a href="../ctt/favoritos.html">Favoritos</a></li>
+    <li><a href="../ctt/app.html">APP</a></li>
+    <li><a href="../ctt/sacola.html">Sacola</a></li>
+    </ul>
+    <div id="divBusca">
+        <input type="text" id="txtBusca" placeholder="Buscar..."/>
+        <img src="../imagens/search.png" id="btnBusca" alt="Buscar"/>
+    </div>
+</div>
+<div class="recipe-container">
+    <h1 class="title">Receita de Pudim de brigadeiro</h1>
+    
+    <div class="image">
+        <img src="../imagens/pudins/Pudimdb.png" alt="pudimFV">
+        </svg>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredientes</h2>
+        <h3>Calda:</h3>
+        <ul>
+            <li>400g de frutas vermelhas</li>
+            <li>1 xícara (chá) de açúcar</li>
+            <li>Suco de 1/2 limão siciliano</li>
+        </ul>
+        
+        <h3>Pudim:</h3>
+        <ul>
+            <li>2 latas de leite condensado</li>
+            <li>2 latas de leite (use a lata de leite condensado vazia para medir)</li>
+            <li>4 colheres (sopa) de chocolate em pó</li>
+            <li>4 ovos</li>
+            <li>1 colher (sopa) de margarina</li>
+            <li>Manteiga para untar</li>
+            <li>Açúcar para polvilhar</li>
+            <li>chocolate granulado para decorar</li>
+        </ul>
+    </div>
+
+    <div class="instructions">
+        <h2>Modo de Preparo</h2>
+        <ol>
+            <li>Coloque no liquidificador o leite condensado, o leite, o chocolate em pó, a margarina, os ovos e bata até formar uma mistura homogênea. Unte uma fôrma de buraco no meio média com margarina e polvilhe com açúcar. Despeje o pudim na fôrma e leve ao forno médio, preaquecido, em banho-maria, por 45 minutos ou até firmar e dourar. Desligue e deixe esfriar. Desenforme, decore com  chocolate granulado e leve à geladeira até o momento de servir.
+            </li>
+        </ol>
+    </div>
+
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DEv3OB_0w4s" title="Receita de Pudim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+<div class="comment-form">
+    <h1 class="title">Avaliações</h1>
+    <h3>Deixe seu comentário</h3>
+    <div class="rating-select">
+      <label>Sua avaliação:</label>
+      <select>
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select>
+    </div>
+    <textarea placeholder="Conte-nos sua experiência com nosso pudim..."></textarea>
+    <button class="submit-comment">Enviar Comentário</button>
+  </div>
+
+  <div class="reviews-container">
+    <div class="review-card">
+      <div class="user-info">
+        <div class="user-avatar">ML</div>
+        <div>
+          <h3>Maria Lima</h3>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <p>"O melhor pudim que já comi na vida! A textura está perfeita e o sabor é divino. Vou pedir novamente com certeza!"</p>
+      <div class="date">15 de Março, 2024</div>
+      <button class="like-button" onclick="this.classList.toggle('liked'); let count = parseInt(this.querySelector('.like-count').textContent); this.classList.contains('liked') ? count++ : count--; this.querySelector('.like-count').textContent = count;">
+        ❤️ <span class="like-count">12</span>
+      </button>
+    </div>
+
+    <div class="review-card">
+      <div class="user-info">
+        <div class="user-avatar">JS</div>
+        <div>
+          <h3>João Silva</h3>
+          <div class="stars">★★★★☆</div>
+        </div>
+      </div>
+      <p>"Pudim delicioso, bem cremoso e com calda na medida certa. Só não dei 5 estrelas pois o meu não ficou muito bonito."</p>
+      <div class="date">12 de Março, 2024</div>
+        ❤️ <span class="like-count">2</span>
+      </button>
+    </div>
+
+    <div class="review-card">
+      <div class="user-info">
+        <div class="user-avatar">AS</div>
+        <div>
+          <h3>Ana Santos</h3>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <p>"Sensacional! O pudim chegou bem embalado e a apresentação estava impecável. Sabor igual ao da minha avó!"</p>
+      <div class="date">10 de Março, 2024</div>
+        ❤️ <span class="like-count">15</span>
+      </button>
+    </div>
+  </div>
+  </body>
+  </html>

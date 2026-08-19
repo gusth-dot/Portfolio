@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionamento Waf</title>
+    <link rel="stylesheet" href="css/funcionamento.css">
+</head>
+<body>
+    <section class="primeira">
+    <main class="cabecalho">
+        <p class="opcao fade"> <a class="link" href="WAF.html">Início</a></p>
+        <p class="opcao fade"> <a class="link" href="seguranca.html ">Segurança da Informação</a></p>
+        <p class="opcao fade"> <a class="link" href="dicaseprotecao.html">Dicas e proteção</a></p>
+        <p class="opcao fade"> <a class="link" href="contato.html">Sair</a></p>
+    </main>
+    <main class="itens">
+    <img class="imagem1" src="img/funcionamento/wafw00f-logo.svg">
+    <p id="titulo" class="fade"><b>Funcionamento</b><br>WAF</p>
+    </main>
+  </section>
+
+  <section class="segunda">
+    <h1 class="subtitulo fade">Visão Geral</h1>
+
+    <div>
+        
+        <div class="fade" style="margin-bottom: 200px;">
+            <p>O WAF (Web Application Firewall) atua como uma barreira inteligente entre o usuário da web e o servidor da aplicação.
+                <br>
+               Ele analisa, filtra e monitora todas as requisições HTTP/HTTPS, identificando padrões suspeitos antes que cheguem à aplicação.
+               Em outras palavras:
+               <br>
+               👉 O WAF lê o que entra e sai do site, e decide o que é seguro e o que deve ser bloqueado.</p>
+        </div>
+    </div>
+    <h1 class="subtitulo fade">Etapas de funcionamento</h1>
+    
+    
+<div style="margin-top: 30px; margin-bottom: 20px;" class="fade">
+    <div style="display: flex;">
+        <div>
+            <h1 style="text-align: center;" class="fade">1. Inspeção de requisição</h1>
+            <p class="fade">O WAF recebe a requisição do usuário antes dela chegar ao site.
+               Ele examina cabeçalhos, parâmetros, cookies e corpo da mensagem.
+               Exemplo: alguém envia um campo de formulário com código suspeito (script ou ' OR '1'='1).</p>
+        </div>
+            <div class="linha-vertical fade"></div>
+        <div style="width: 2000px;">
+        <h2 style="text-align: center;" class="fade">2. Aplicação de Regras de Segurança</h2>
+        <p class="fade">O WAF compara o conteúdo da requisição com um conjunto de regras pré-definidas.
+           Essas regras identificam comportamentos típicos de ataques:
+           SQL Injection
+           Cross-Site Scripting (XSS)
+           CSRF
+           File Inclusion
+           Exploração de vulnerabilidades conhecidas (CVE)</p>
+        </div>
+    </div>
+
+    <div style="display: flex; margin-top: 20px;" class="fade">
+        <div class="linha-horizontal fade" style="margin-top: 8px;"></div>
+        <img src="img/funcionamento/Estrela Branca.png" id="estrela" class="fade">
+         <div class="linha-horizontal" style="margin-top: 8px;"></div>
+    </div>
+
+    <div style="display: flex;" class="fade">
+        <div style="width: 1900px;">
+            <h2 style="text-align: center; margin-top: 10px;" class="fade">3. Bloqueio ou permissão</h2>
+            <p class="fade">Se o WAF detectar algo suspeito, ele:
+               Bloqueia a requisição,
+               Envia alerta ao administrador,
+               E registra o evento em logs.
+               Caso contrário, a requisição é liberada normalmente para o servidor.</p>
+        </div>
+            <div class="linha-vertical fade" style="margin-top: 25px; margin-left: 45px;"></div>
+        <div style="width: 2000px; margin-top: 10px;" class="fade">
+        <h2 style="text-align: center;" class="fade">4. Monitoramento e Aprendizado</h2>
+        <p class="fade">Alguns WAFs modernos utilizam Machine Learning (ML) para aprender com o tráfego real.
+           Assim, eles ajustam as regras automaticamente, reduzindo falsos positivos e aumentando a precisão.</p>
+        </div>
+</div>
+</section>
+
+<img src="img/funcionamento/WAFW00F.png" id="WAFW00F">
+
+<section class="terceira">
+    <h1 style="margin-top: 40px;" class="fade">O que é Wafw00f</h1>
+    <p class="fade">O Wafw00f é uma ferramenta de <b>fingerprinting</b> desenvolvida pela OWASP que serve para detectar se um site está protegido por um WAF e, se estiver, identificar qual tecnologia está sendo usada (como Cloudflare, ModSecurity, F5 BIG-IP, Akamai, entre outros).</p>
+
+
+    <div class="wrap fade">
+<header>
+       <div class="logo fade">Wf</div>
+       <div>
+       <h1 class="fade">Wafw00f — Detecção de WAF</h1>
+       <p class="lead fade">Bloco explicativo: o que é o Wafw00f, comando de exemplo e aviso sobre uso   ético.</p>
+    </div>
+</header>
+
+
+<div class="card fade">
+<div class="badge fade">🔍 Reconhecimento</div>
+
+
+
+
+<div style="display: flex; gap: 15px;" class="fade">
+    <div class="icon fade">🕵️</div>
+
+    <h1 class="fade">Como funciona</h1>
+</div>
+<p class="fade">O Wafw00f analisa respostas HTTP e códigos de cabeçalhos para identificar padrões característicos de cada WAF.
+    <br>
+Ele envia requisições e interpreta detalhes como:
+
+<li class="fade">Cabeçalhos HTTP específicos (Server, Set-Cookie, Via, X-*)</li>
+
+<li class="fade">Códigos de resposta e mensagens de erro</li>
+
+<li class="fade">Comportamento do servidor ao detectar ataques simulados</li>
+<br>
+<b class="fade">Exemplo:</b>
+<br>
+Se o Wafw00f envia uma requisição suspeita e o servidor responde com um erro típico do ModSecurity, ele conclui:
+</p>
+<p style="font-size: 20px; margin-top: 15px;" class="fade">“ModSecurity WAF detectado.”</p>
+
+
+
+
+<div style="display: flex; gap: 15px; margin-top: 20px;" class="fade">
+    <div class="icon fade">🧰</div>
+
+    <h1 class="fade">Onde usar</h1>
+</div>
+    <p class="fade">Em auditorias e testes autorizados para mapear defesa de aplicações web; também útil para ajustar scanners e evitar falsos positivos.</p>
+
+
+
+<div style="display: flex; gap: 15px; margin-top: 20px;" class="fade">
+<div class="icon fade">⚖️</div>
+
+<h1 class="fade">Ética</h1>
+</div>
+<p class="fade">É importante lembrar:
+<br>
+<br>
+O Wafw00f não invade nem explora falhas.
+Ele apenas detecta e informa a presença de um WAF.
+<br>
+<br>
+Portanto, seu uso deve ser ético e autorizado — apenas em sites próprios ou com permissão, dentro de testes controlados.</p>
+
+<h1 style="margin-top: 30px; text-align: center; font-size: 50px; margin-bottom: 15px;" class="fade">Instalação e uso (no Kali Linux)</h1>
+<p class="fade">O <b>Kali Linux</b> já vem com o Wafw00f instalado por padrão.
+    <br>
+Mas, se não estiver, é fácil instalar:</p>
+
+<div class="linux fade">
+    <p style="font-size: 15px; color: silver; margin-top: -19px; margin-left: -10px;">Linha de comando Kali-Linux</p>
+    <p style="display: flex; margin-top: 13px;">sudo apt install wafw00f -y</p>
+</div>
+
+<h1 style="margin-top: 20px;" class="fade">Exemplo de uso:</h1>
+<div class="linux fade">
+    <p style="font-size: 15px; color: silver; margin-top: -19px; margin-left: -10px;" class="fade">Linha de comando Kali-Linux</p>
+    <p style="display: flex; margin-top: 13px;" class="fade">wafw00f https://www.exemplo.com</p>
+</div>
+
+<h1 style="margin-top: 20px;" class="fade">Saída típica:</h1>
+    <div class="linux fade">
+        <p style="font-size: 15px; color: silver; margin-top: -19px; margin-left: -10px;" class="fade">Linha de comando Kali-Linux</p>
+        <p style="display: flex; margin-top: 10px;" class="fade">[*] Checking https://www.exemplo.com
+        <br>
+        [+] The site https://www.exemplo.comCloudflare (Cloudflare Inc.)</p>
+    </div>
+
+<h1 style="margin-top: 30px; text-align: center; font-size: 50px; margin-bottom: 15px;" class="fade">Prinipais usos</h1>
+<p class="fade">O Wafw00f é útil em <b>duas situações principais</b>:
+<br> 
+<b>1.</b> Auditorias de segurança — identificar se um site está protegido por WAF e qual tipo.
+<br>
+<b>2.</b>Testes de penetração (ethical hacking) — ajustar ferramentas ofensivas (como SQLMap ou Burp Suite) para evitar falsos positivos causados pelo WAF.</p>
+<p style="font-size: 18px; color: silver; margin-top: 10px;" class="fade"><li class="fade">É uma ferramenta dereconhecimento, não de ataque.</li></p>
+
+</div>
+<hr style="margin-top: 30px;">
+<section style="display: flex; gap: 695px; margin-bottom: -40px;" >
+      <main style="display: flex;">
+        <p style="font-size: 15px; margin-top: 20px;">©2025 ETEC PROFESSOR ADHEMAR BATISTA HEMÉRITAS</p>
+      </main>
+      <p style="font-size: 15px; margin-top: 20px;">2º Infonet</p>
+    </section>
+</section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

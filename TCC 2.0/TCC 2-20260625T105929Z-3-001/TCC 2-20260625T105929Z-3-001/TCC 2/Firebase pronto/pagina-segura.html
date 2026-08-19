@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url(imagens/fundo.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+        .Protegido{
+            background-color: black;
+            border: 1px solid white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .Titulo{
+            color: white;
+            text-align: center;
+
+        }
+
+        .Botão{
+            color: rgb(134, 0, 0);
+            text-decoration: none;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            font-size: 20px;
+            
+        }
+</style>
+</head>
+
+<body>
+    <main class="Protegido">
+        <h1 class="Titulo">Login efetuado com sucesso.</h1>
+        <p id="userEmailDisplay" style="color: white; text-align: center; margin: 20px 0;"></p>
+        <button onclick="logoutUser()" class="Botão" style="background: none; border: none; cursor: pointer;">Sair da conta</button>
+        <a href="../index2.html" class="Botão"><p class="Botão">Voltar para a pagina inicial</p></a>
+    </main>
+
+    <!-- Inclua o SDK do Firebase E SEU SCRIPT DE AUTENTICAÇÃO -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="firebase.js"></script>
+</body>
+</html>

@@ -1,0 +1,1212 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background: #0f1b24;
+  color: #fff;
+}
+
+/* HEADER */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.Cabeçalho {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background-color: #162026;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    transition: transform 0.4s ease;
+
+    /* SOMBRA 3D */
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.25),
+        0 15px 35px rgba(0, 0, 0, 0.20),
+        0 2px 4px rgba(255, 255, 255, 0.03);
+}
+
+.Cabeçalho.hide {
+    transform: translateY(-100%);
+}
+
+/* LOGO */
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.Logotipo{
+    width: 100px;
+    display: block;
+}
+
+
+/* LINKS CENTRALIZADOS */
+.Navegações{
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* LINKS */
+.Nav{
+    position: relative;
+    display: inline-block;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    transition: color .3s ease;
+}
+
+
+/* LINHA DO HOVER */
+.Nav::after{
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2.5px;
+
+    background: linear-gradient(
+        90deg,
+        #ff0033,
+        #ff3045
+    );
+
+    border-radius: 20px;
+
+    transition: width .35s ease;
+}
+
+.Nav:hover{
+    color: #ff3045;
+}
+
+.Nav:hover::after{
+    width: 100%;
+}
+
+
+/* PREMIUM */
+.Premium{
+    margin-left: auto;
+
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #ff1e1e,
+        #b30000
+    );
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    padding: 12px 35px;
+
+    color: white;
+
+    width: 150px;
+
+    font-family:
+        'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+
+    cursor: pointer;
+}
+
+.Premium::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:70%;
+    height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
+    transform:skewX(-25deg);
+    transition:0.5s;
+    z-index:-1;
+}
+
+.Premium:hover{
+    transform:translateY(-5px);
+    background:linear-gradient(135deg,#ff3b3b,#d40000);
+    box-shadow:0 15px 30px rgba(255,0,0,0.5);
+}
+
+.Premium:hover::after{
+    left:130%;
+}
+
+.Premium:active{
+    transform:scale(0.95);
+}
+
+/* botão hambúrguer escondido no desktop */
+.menu-toggle{
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    background: #111c23;
+    color: white;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position: relative;
+
+    min-height: 720px;
+
+    margin-top: 0;
+
+    background-image: url("Finanças/fundo.png");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* Escurecimento */
+
+.overlay{
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(22,32,38,.95) 0%,
+            rgba(22,32,38,.65) 45%,
+            rgba(22,32,38,.25) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* Gradiente inferior */
+
+.hero::after{
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 180px;
+
+    background: linear-gradient(
+        transparent,
+        #162026
+    );
+
+    z-index: 2;
+}
+
+
+/* Conteúdo */
+
+.content{
+    position: relative;
+
+    width: min(1200px, 90%);
+
+    z-index: 3;
+
+    padding-top: 80px;
+}
+
+
+/* Título */
+
+.content h1{
+    max-width: 800px;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 5px 20px rgba(0,0,0,.6);
+}
+
+
+/* destaque */
+
+.content h1::after{
+    content: "";
+
+    display: block;
+
+    width: 90px;
+    height: 4px;
+
+    margin-top: 25px;
+
+    background: #db001d;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 15px rgba(219,0,29,.45);
+}
+
+
+/* =========================================================
+   CARD DO HERO
+========================================================= */
+
+.content .card{
+    width: min(570px, 100%);
+
+    padding: 30px;
+
+    background: rgba(22,32,38,.78);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-left: 4px solid #db001d;
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+}
+
+.content .card strong{
+    display: block;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+.content .card p{
+    color: #d5dde1;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ÁREA DE DICAS
+========================================================= */
+
+.cards{
+    background: #162026;
+
+    padding: 100px 7%;
+
+    position: relative;
+}
+
+
+/* pequeno detalhe superior */
+
+.cards::before{
+    content: "";
+
+    display: block;
+
+    width: 70px;
+    height: 4px;
+
+    margin: 0 auto 55px;
+
+    background: #db001d;
+
+    border-radius: 10px;
+}
+
+
+/* Container */
+
+.container{
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* Texto */
+
+.text h2{
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    margin-bottom: 35px;
+}
+
+.text h2::after{
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 3px;
+
+    margin-top: 15px;
+
+    background: #4B7B98;
+
+    border-radius: 10px;
+}
+
+
+/* Lista */
+
+.text ul{
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.text li{
+    position: relative;
+
+    padding: 16px 18px 16px 45px;
+
+    background: #24323B;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    border-radius: 10px;
+
+    color: #dce4e8;
+
+    font-size: 15px;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+.text li::before{
+    content: "✓";
+
+    position: absolute;
+
+    left: 17px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #4B9BC3;
+
+    font-weight: bold;
+}
+
+.text li:hover{
+    transform: translateX(5px);
+
+    border-color: rgba(75,123,152,.7);
+
+    background: #293b46;
+}
+
+
+/* Imagem */
+
+.image{
+    height: 430px;
+
+    border-radius: 20px;
+
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(22,32,38,.1),
+            rgba(22,32,38,.5)
+        ),
+        url("img/fiancas_security.png");
+
+    background-size: cover;
+    background-position: center;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.image:hover{
+    transform: scale(1.02);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.5);
+}
+
+
+/* =========================================================
+   PLANOS
+========================================================= */
+
+.planos{
+    padding: 100px 7%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #24323B,
+            #1d2a31
+        );
+
+    text-align: center;
+}
+
+.planos > h2{
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.planos > p{
+    color: #b9c5ca;
+
+    font-size: 17px;
+
+    margin-bottom: 55px;
+}
+
+
+/* Container tabela */
+
+.container-2{
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.box-planos{
+    background: #162026;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.3);
+}
+
+
+/* Tabela */
+
+.tabela{
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+    align-items: stretch;
+}
+
+
+/* Labels */
+
+.labels{
+    text-align: left;
+
+    padding-top: 75px;
+}
+
+.labels p{
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 30px;
+
+    color: #cbd4d8;
+
+    border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+
+/* Colunas */
+
+.col{
+    text-align: center;
+
+    border-left: 1px solid rgba(255,255,255,.07);
+}
+
+.col h3{
+    padding: 25px 10px;
+
+    font-size: 20px;
+}
+
+.col ul{
+    list-style: none;
+}
+
+.col li{
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid rgba(255,255,255,.07);
+
+    font-size: 20px;
+}
+
+
+/* Premium */
+
+.col.destaque{
+    background:
+        linear-gradient(
+            180deg,
+            rgba(75,123,152,.18),
+            rgba(75,123,152,.05)
+        );
+
+    border-top: 3px solid #4B7B98;
+}
+
+.col.destaque h3{
+    color: #73b5d7;
+}
+
+
+/* Estados */
+
+.ok{
+    color: #5ecf91;
+}
+
+.no{
+    color: #db5263;
+}
+
+
+/* =========================================================
+   BENEFÍCIOS
+========================================================= */
+
+.beneficios-cartao,
+.beneficios-cartao-b{
+    padding: 100px 7%;
+
+    background: #162026;
+
+    text-align: center;
+}
+
+.beneficios-cartao h2{
+    font-size: 38px;
+
+    margin-bottom: 50px;
+}
+
+
+/* Card cartão */
+
+/* =========================================================
+   CARD DO VORTEX CARD
+========================================================= */
+
+.card-beneficio{
+    position: relative;
+
+    max-width: 900px;
+    min-height: 520px;
+
+    margin: auto;
+
+    padding: 45px 50px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2b3d47,
+            #16232c
+        );
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.35);
+
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+    perspective: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        box-shadow .5s ease,
+        border-color .5s ease;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.card-beneficio h1,
+.card-beneficio h3{
+    position: relative;
+
+    margin: 0;
+
+    transform: translateZ(35px);
+
+    transition:
+        transform .5s ease,
+        color .4s ease;
+}
+
+
+.card-beneficio:hover h1,
+.card-beneficio:hover h3{
+    transform: translateZ(55px);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.card-beneficio .descricao{
+    position: relative;
+
+    margin: 0;
+
+    max-width: 750px;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    transform: translateZ(20px);
+
+    transition:
+        transform .5s ease;
+}
+
+
+.card-beneficio:hover .descricao{
+    transform: translateZ(35px);
+}
+
+
+/* =========================================================
+   ÁREA DO CARTÃO
+========================================================= */
+
+.imagem-cartao{
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   IMAGEM DO CARTÃO
+========================================================= */
+
+.imagem-cartao img{
+    position: relative;
+
+    display: block;
+
+    width: min(500px, 90%);
+
+    margin: 0 auto;
+
+    transform:
+        translateZ(30px)
+        rotateX(0deg)
+        rotateY(0deg);
+
+    filter:
+        drop-shadow(0 20px 20px rgba(0,0,0,.5));
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        filter .6s ease;
+}
+
+
+/* =========================================================
+   HOVER 3D
+========================================================= */
+
+.card-beneficio:hover{
+    transform:
+        translateY(-15px)
+        rotateX(4deg)
+        rotateY(-4deg)
+        scale(1.015);
+
+    border-color:
+        rgba(75,123,152,.7);
+
+    box-shadow:
+        0 35px 70px rgba(0,0,0,.6),
+        0 10px 30px rgba(75,123,152,.15);
+}
+
+
+.card-beneficio:hover .imagem-cartao img{
+    transform:
+        translateZ(100px)
+        translateY(-18px)
+        rotateX(8deg)
+        rotateY(-18deg)
+        rotateZ(4deg)
+        scale(1.05);
+
+    filter:
+        drop-shadow(30px 40px 30px rgba(0,0,0,.7));
+}
+
+
+/* =========================================================
+   BENEFÍCIO / LIMITE
+========================================================= */
+
+.card-beneficio .limite{
+    position: relative;
+
+    margin: 0;
+
+    transform: translateZ(25px);
+
+    transition:
+        transform .5s ease,
+        background .4s ease;
+}
+
+
+.card-beneficio:hover .limite{
+    transform: translateZ(45px);
+
+    background: rgba(75,123,152,.3);
+}
+
+
+.limite{
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border-radius: 30px;
+
+    background: rgba(75,123,152,.18);
+
+    border: 1px solid rgba(75,123,152,.4);
+
+    color: #8ec9e7;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.Footer{
+  width: 100%;
+  height: 320px;
+  background-image: url('img/Fundo-footer.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Logo-footer{
+    width: 120px;
+}
+
+.Legenda-logo{
+    color: white;
+    padding-top: 10px;
+}
+
+.Links{
+    color: #C60302;
+    font-size: 23px;
+    font: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Linha-footer{
+    color: white;
+    margin-top: 10px;
+}
+
+.Container-Footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+    padding-top: 50px;
+}
+
+.Copy {
+    color: #9caab0;
+
+    text-align: center;
+
+    margin: 45px auto 0;
+
+    padding: 20px 30px;
+
+    max-width: 1400px;
+
+    border-top:
+        1px solid rgba(255,255,255,.15);
+
+    font-size: 12px;
+}
+
+.Foto{
+    width: 80px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media(max-width: 1100px){
+
+    .Cabeçalho{
+        padding: 15px 25px;
+    }
+
+    .Navegações{
+        gap: 20px;
+    }
+
+    .Nav{
+        font-size: 14px;
+    }
+
+    .container{
+        gap: 40px;
+    }
+
+    .text ul{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media(max-width: 850px){
+
+    .Cabeçalho{
+        padding: 15px 20px;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .Navegações{
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px 20px 20px;
+
+        background: #162026;
+
+        border-top: 1px solid rgba(255,255,255,.08);
+
+        box-shadow: 0 15px 30px rgba(0,0,0,.35);
+    }
+
+    .Navegações.active{
+        display: flex;
+    }
+
+    .Nav{
+        width: 100%;
+
+        padding: 15px 5px;
+
+        font-size: 16px;
+    }
+
+    .Premium{
+        display: none;
+    }
+
+    .hero{
+        min-height: 650px;
+    }
+
+    .content{
+        padding-top: 80px;
+    }
+
+    .content h1{
+        font-size: 44px;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .image{
+        min-height: 350px;
+    }
+
+    .tabela{
+        grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    }
+
+    .labels p{
+        padding-left: 15px;
+        font-size: 13px;
+    }
+
+    .col h3{
+        font-size: 16px;
+    }
+
+    .col li{
+        font-size: 16px;
+    }
+
+    .Container-Footer{
+        gap: 40px;
+        justify-content: flex-start;
+    }
+}
+
+
+@media(max-width: 600px){
+
+    .hero{
+        min-height: 600px;
+
+        background-position: center;
+    }
+
+    .content h1{
+        font-size: 36px;
+    }
+
+    .content .card{
+        padding: 22px;
+    }
+
+    .content .card strong{
+        font-size: 18px;
+    }
+
+    .cards,
+    .planos,
+    .beneficios-cartao,
+    .beneficios-cartao-b{
+        padding: 70px 5%;
+    }
+
+    .text h2,
+    .planos > h2,
+    .beneficios-cartao h2{
+        font-size: 30px;
+    }
+
+    .tabela{
+        grid-template-columns: 1.3fr 1fr 1fr 1fr;
+
+        font-size: 12px;
+    }
+
+    .labels p{
+        font-size: 10px;
+        padding-left: 8px;
+    }
+
+    .col h3{
+        font-size: 12px;
+        padding: 20px 5px;
+    }
+
+    .col li{
+        font-size: 14px;
+        height: 60px;
+    }
+
+    .labels p{
+        height: 60px;
+    }
+
+    .card-beneficio{
+        padding: 30px 20px;
+    }
+
+    .Container-Footer{
+        flex-direction: column;
+
+        padding: 50px 30px;
+    }
+
+    .Copy{
+        margin-top: 10px;
+    }
+}
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .Premium {
+        width: 105px;
+
+        font-size: 10px;
+    }
+
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+
+    .card strong {
+        font-size: 17px;
+    }
+
+
+    .text h2 {
+        font-size: 23px;
+    }
+
+
+    .beneficios-cartao h2 {
+        font-size: 26px;
+    }
+
+}

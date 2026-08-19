@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.cabecalho {
+    background-color: rgb(249, 226, 190);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Alinha o conteúdo no centro horizontalmente */
+    z-index: 2;
+}
+#ctt {
+    background-color: rgb(249, 226, 190);
+    position: fixed;
+    top: 70px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 75%;  /* Caso queira que ocupe toda a largura da tela */
+    z-index: 2;  /* Garante que o "ctt" fique acima dos outros elementos */
+    margin-top: -55px;
+}
+#ctt li {
+    margin: 0 15px;
+}
+
+#ctt li a {
+    color: rgb(181, 127, 127);
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding: 10px;
+}
+
+#ctt li a:hover {
+    background-color: rgb(240, 204, 158); /* Cor de fundo no hover */
+    transition: background-color 0.3s ease;
+}
+.titulo-container {
+    margin-top: 40px; /* Espaçamento entre o topo e o título */
+}
+
+.titulo {
+    font-size: 36px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(181, 127, 127);
+    margin: 0;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: -100px;
+    align-self: flex-start; /* Alinha a logo à esquerda */
+}
+
+.menu {
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    padding: 0; 
+    gap: 20px;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 20px;
+    align-items: center;
+    position: relative;
+}
+
+.menu li a {
+    color: rgb(181, 127, 127);
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.menu li a:hover {
+    background-color: rgb(240, 204, 158);
+    transition: .6s;
+}
+#divBusca {
+    background-color: rgb(181, 127, 127);
+    border: solid 1px;
+    border-radius: 15px;
+    width: 220px;
+    height: 35px;
+    position: fixed;  /* Tornando o "divBusca" fixo */
+    right: 18px;
+    top: 50%;  /* Centraliza verticalmente em relação à tela */
+    transform: translateY(-50%);  /* Corrige o alinhamento vertical */
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    top: 15%;
+}
+/* Ajustes no campo de busca (#txtBusca) */
+#txtBusca {
+    float: left;
+    background-color: transparent;
+    padding-left: 5px;
+    font-style: italic;
+    font-size: 16px;
+    border: none;
+    height: 32px;
+    width: 165px; /* Mantivemos a largura reduzida */  
+    
+}
+
+/* Ajustes no ícone de busca (#btnBusca) */
+#btnBusca {
+    width: 25px; /* Mantém o tamanho do ícone */
+    position: fixed;
+    margin-top: 4px;
+    margin-left: 15px;
+    z-index: 10;
+    position: fixed;
+    top: 5%;
+    right: 18px;
+    z-index: 10;
+}
+@keyframes wobble {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 100px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #deb887;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    background: #8b4513;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #a0522d;
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.info-card svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    fill: #8b4513;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(240, 204, 158)
+}
+#title{
+    text-align: center;
+}

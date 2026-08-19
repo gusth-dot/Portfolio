@@ -1,0 +1,1836 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ===== SCROLLBAR ===== */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: red #111;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darkred;
+}
+
+/* =========================================================================================================================
+ CABEÇALHO 
+======================================================================================================================== */
+#cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+
+  position: fixed; /* fixa no topo */
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 1000;
+
+  background: rgb(178, 0, 0);
+
+  transition: transform 0.4s ease;
+
+  padding-bottom: 1%;
+}
+
+body.dark-mode #cabecalho{
+  background: rgb(118, 0, 0);
+}
+
+body.dark-mode .cor-cabecalho{
+  background: rgb(118, 0, 0);
+}
+body.dark-mode p{
+  color: white;
+}
+
+/* ESCONDIDO */
+#cabecalho.hide {
+  transform: translateY(-100%);
+}
+.cor-cabecalho{
+  background-color: rgb(178, 0, 0);
+}
+.link-cabecalho:hover{
+  color: #ffd000;
+  transition: 0.3s;
+}
+
+/* Linha animada*/
+.link-cabecalho {
+  position: relative;
+  display: inline-block;
+
+  text-decoration: none;
+  color: white;
+}
+
+/* Linha abaixo da opção */
+.link-cabecalho::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 3px;
+
+  background: #ffd000;
+
+  transition: width 0.35s ease;
+
+  border-radius: 2px;
+}
+
+/* Cresce da direita para a esquerda */
+.link-cabecalho:hover::after {
+  width: 100%;
+}
+
+.login {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.login p {
+    margin: 0;
+    color: white;
+    cursor: pointer;
+
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+.login p:hover {
+    color: #ffd000;
+}
+
+.menu-item{
+  margin-top: 1%;
+  flex-shrink: 0;
+}
+.menu-item > p {
+  font-size: clamp(1.1rem, 1.2vw, 1.1rem);
+  cursor: pointer;
+  color: white;
+}
+.menu-item h2{
+  margin: 0;
+  text-align: center;
+}
+.menu-item .categoria{
+  font-size: 80%;
+}
+.link-cabecalho{
+  text-decoration: none;
+  color: white;
+}
+#logo {
+  width: 12vw;
+  margin-left: 3vw;
+}
+
+/* Notícias */
+
+.notícias{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+  margin: 0 auto;
+  justify-content: center;
+}
+.noticia{
+  width: 21%;
+  cursor: pointer;
+  margin-top: 2%;
+}
+.noticia p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+.noticia:hover{
+  color: red;
+}
+.noticia img{
+  width: 100%;  /* 🔥 ocupa o card */
+  
+  max-height: 70%;
+  display: block;
+  border-radius: 2%;
+  object-fit: cover;
+}
+.categoria{
+  margin: 0;
+  color: gray;
+  cursor: pointer;
+  margin-top: 2%;
+}
+.category{
+  display: flex; 
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 1%;
+}
+.category p{
+  margin: 0;
+}
+.category p:hover{
+  color: red;
+  transform: scale(1.1);
+  transition: 0.3s
+}
+.option::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* distância da linha para o texto */
+  width: 0%; /* começa com 0 */
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  transition: width 0.3s ease; /* animação suave */
+}
+.option:hover::after{
+  width: 100%;
+}
+#opcoes{
+  display: flex;
+  gap: 2%;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+#opcoes p {
+  margin: 0 !important;
+}
+/* Filmes */
+.filmes{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.filme{
+  width: 12%;
+}
+.filme img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.filme:hover{
+  color: red;
+  transition: 0.4s;
+}
+.filme > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 1%;
+}
+
+
+/* Quadrinhos */
+
+.quadrinhos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.quadrinho{
+  width: 12%;
+  
+}
+.quadrinho img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 3%;
+  border: 1px solid black;
+}
+.quadrinho:hover{
+  color: red;
+  transition: 0.4s;
+}
+.quadrinho > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 2%;
+}
+
+/* Series */
+
+.series{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.serie{
+  width: 12%;
+}
+.serie img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.serie:hover{
+  color: red;
+  transition: 0.4s;
+}
+.serie > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 1%;
+}
+
+/* Jogos */
+.jogos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.jogo{
+  width: 12%;
+}
+.jogo img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.jogo:hover{
+  color: red;
+  transition: 0.4s;
+}
+.jogo > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 1%;
+}
+
+/* ===== Personagens ===== */
+/* CONTAINER */
+.cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 3%;
+    margin-top: 2%;
+}
+
+/* CARD */
+.card{
+    position:relative;
+
+    width: clamp(180px, 13vw, 250px);
+    height: clamp(280px, 35vh, 340px);
+
+    border-radius: 20px 0 0 0;
+
+    display:flex;
+    justify-content:flex-end;
+    flex-direction:column;
+
+    overflow:visible;
+
+    transition:.35s;
+
+    margin: 9vh 0;
+}
+
+/* PARTE SUPERIOR */
+.card-top{
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+    height:240px;
+
+    border-radius: 20px 5px 0 0;
+
+    z-index:1;
+}
+
+/* PARTE INFERIOR */
+.card-bottom{
+    position:relative;
+
+    width:100%;
+    height: clamp(70px, 10vh, 90px);
+
+    border-radius: 0 0 20px 5px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-weight:bold;
+
+    font-size: 15px;
+
+    z-index:3;
+}
+
+/* IMAGENS */
+/* IMAGEM PADRÃO */
+.card img{
+    position:absolute;
+
+    width:190px;
+
+    left:50%;
+    transform:translateX(-50%);
+
+    bottom:40px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    transition:.4s ease;
+}
+
+/* TAMANHO ESPECÍFICO DO HOMEM DE FERRO */
+.homem-de-ferro-image{
+    width:110% !important;
+}
+
+/* HOVER */
+.card:hover .homem-de-ferro-image{
+    transform:translateX(-50%) scale(1.08);
+}
+
+
+.capitao-america-image{
+  width: 121% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .capitao-america-image{
+    transform:translateX(-50%) scale(1.08);
+}
+
+
+.thor-image{
+  width: 128% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .thor-image{
+    transform:translateX(-53%) scale(1.08);
+}
+
+.homem-aranha-image{
+  width: 99% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .homem-aranha-image{
+  transform:translateX(-50%) scale(1.08);
+}
+
+.hulk-image{
+  width: 130% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .hulk-image{
+  transform:translateX(-50%) scale(1.08);
+}
+
+/* ===== CORES ===== */
+
+.ironman .card-top{
+    background:#920000;
+}
+
+.ironman .card-bottom{
+    background:#ff1b1b;
+}
+
+/* Capitão */
+
+.capitao .card-top{
+    background:#1f2538;
+}
+
+.capitao .card-bottom{
+    background:#343b49;
+}
+
+/* Thor */
+
+.thor .card-top{
+    background:#5e0d0d;
+}
+
+.thor .card-bottom{
+    background:#3b3333;
+}
+
+/* Homem Aranha */
+
+.spiderman .card-top{
+    background:#ff1b1b;
+}
+
+.spiderman .card-bottom{
+    background:#09a7df;
+}
+
+/* Hulk */
+
+.hulk .card-top{
+    background:#98a44f;
+}
+
+.hulk .card-bottom{
+    background:#313b47;
+}
+
+/* HOVER */
+
+.card:hover{
+    transform:translateY(-8px);
+    transition:.3s;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgb(232, 232, 232);
+  padding: 2%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: 0.3s ease;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== SETA ===== */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  transform: translateX(-50%) translateY(10px);
+
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgb(0, 0, 0);
+
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  filter: drop-shadow(0 -2px 5px rgba(0,0,0,0.2));
+}
+
+/* ===== HOVER ===== */
+.menu-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-item:hover .dropdown::before {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ===================== */
+/* MENU MOBILE */
+/* ===================== */
+
+.menu-toggle{
+  display: none;
+
+  font-size: 2rem;
+  color: white;
+
+  cursor: pointer;
+
+  margin-left: auto;
+
+  z-index: 2000;
+
+  user-select: none;
+}
+
+/* ===================== */
+/* BOTÃO TEMA */
+/* ===================== */
+
+.theme-toggle{
+    display: flex;
+}
+
+.theme-toggle input{
+  display: none;
+}
+
+.toggle-label{
+  width: 65px;
+  height: 26px;
+
+  background: #e6e6e6;
+
+  border-radius: 999px;
+
+  display: block;
+
+  position: relative;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+/* Bolinha */
+.toggle-icon{
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  top: 1px;
+  left: 2px;
+
+  border-radius: 50%;
+
+  background: rgb(255, 255, 255);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  transition: .3s ease;
+}
+
+/* Tema claro */
+#theme-switch:checked + .toggle-label{
+  background: #343434;
+}
+
+/* Move a bolinha */
+#theme-switch:checked + .toggle-label .toggle-icon{
+  left: calc(100% - 26px);
+  background: rgb(32, 32, 32);
+}
+
+/* Troca o emoji */
+#theme-switch:checked + .toggle-label .toggle-icon::before{
+  content: "🌙";
+}
+
+.toggle-icon::before{
+  content: "☀️";
+}
+
+.dark-mode{
+  background: #121212;
+  color: white;
+}
+
+.dark-mode .dropdown{
+  background: #1e1e1e;
+}
+
+.dark-mode .categoria{
+  color: #bdbdbd;
+}
+
+.dark-mode .card-bottom{
+  color: white;
+}
+
+.header-actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 5%;
+    margin-right: 1%;
+
+    flex-shrink: 0;
+}
+
+/* ===================== */
+/* RESPONSIVO TABLET/MOBILE */
+/* ===================== */
+
+/* Quando a tela começar a ficar estreita */
+@media (max-width: 1200px) {
+
+    .card.hulk {
+        display: none;
+    }
+
+    .menu-item > p,
+    .menu-item > a {
+        font-size: 1rem;
+    }
+
+    .header-actions {
+        gap: 15px;
+        margin-right: 1.5%;
+    }
+
+    .login p {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 900px){
+
+  /* CABEÇALHO */
+  #cabecalho{
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+  }
+
+  /* LOGO */
+  #logo{
+    width: 120px;
+    margin: 0;
+  }
+
+  /* BOTÃO HAMBURGUER */
+  /* BOTÃO HAMBURGUER */
+  .menu-toggle{
+    display: block;
+
+      margin-left: auto;
+      margin-right: 0;
+
+      font-size: 2.5rem;
+      transition: ease 0.3s;
+  }
+
+
+  /* ESCONDE TUDO POR PADRÃO */
+  .menu-item,
+  .login,
+  .header-actions{
+    display: none;
+  }
+
+  /* MENU ABERTO */
+  #cabecalho.active .menu-item{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: ease 0.5s;
+  }
+
+  #cabecalho.active .header-actions{
+    display: flex;
+
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 0;
+    transition: ease 0.3s;
+  }
+
+  #cabecalho.active .login{
+    display: flex;
+    align-items: center;
+  }
+
+  /* TEXTO MENU */
+  .menu-item > p,
+  .menu-item > a{
+    margin: 0;
+    font-size: 1rem;
+  }
+
+
+  /* PERSONAGENS */
+  .cards{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    justify-items: center;
+  }
+
+  .card{
+    margin: 20px 0;
+  }
+
+  /* FILTROS */
+  .category{
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+  }
+
+  .theme-toggle{
+    display: none;
+  }
+
+  /* aparece quando o menu hambúrguer abre */
+  #cabecalho.active .theme-toggle{
+    display: flex;
+    margin-top: 5%;
+  }
+
+  .login{
+    margin: 0;
+    transform: translateY(2vh);
+  }
+
+  /* DROPDOWN MOBILE */
+  .dropdown{
+    position: static;
+
+    width: 100%;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: none;
+
+    display: none;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .dropdown::before{
+    display: none;
+  }
+
+  /* ABRIR DROPDOWN */
+  .menu-item.active .dropdown{
+    display: block;
+  }
+
+  /* GRIDS */
+  .notícias,
+  .filmes,
+  .quadrinhos,
+  .series,
+  .jogos{
+    gap: 15px;
+  }
+
+  .noticia,
+  .filme,
+  .quadrinho,
+  .serie,
+  .jogo{
+    width: 45%;
+  }
+
+  /* CATEGORY */
+  .category{
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  /* LOGIN */
+  #cabecalho.active .login{
+    padding-top: 20px;
+    margin: 0;
+  }
+  .container-mais{
+    margin-bottom: 20px;
+  }
+}
+/* ===================== */
+/* MOBILE PEQUENO */
+/* ===================== */
+
+@media (max-width: 600px){
+
+  #logo{
+    width: 100px;
+  }
+
+  .menu-toggle{
+    font-size: 2.2rem;
+  }
+
+  /* LISTAS EM 1 COLUNA */
+  .notícias,
+  .filmes,
+  .quadrinhos,
+  .series,
+  .jogos,
+  .cards{
+    grid-template-columns: 1fr;
+  }
+
+  .dropdown{
+    padding: 20px;
+  }
+
+  .menu-item > p,
+  .menu-item > a{
+    font-size: 0.95rem;
+  }
+
+  .toggle-label{
+    width: 65px;
+    height: 28px;
+  }
+
+  .toggle-icon{
+    width: 24px;
+    height: 24px;
+  }
+
+  .login p{
+    font-size: 1rem;
+    transform: translateY(-2vh);
+  }
+}
+
+/* =========================================================================================
+   CAPA DAS SÉRIES
+========================================================================================= */
+
+.capa-series {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* IMAGEM DA CAPA */
+
+.capa-series img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* CONTEÚDO */
+
+.capa-content {
+    position: absolute;
+
+    top: 60%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 1000px;
+
+    color: white;
+    text-align: center;
+
+    z-index: 3;
+}
+
+
+.capa-content h1 {
+    margin-bottom: 3vh;
+
+    font-size: clamp(2rem, 4vw, 3.2rem);
+
+    line-height: 1.1;
+}
+
+
+.capa-content p {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+}
+
+
+/* =====================================================
+   TABLETS
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .capa-series {
+        height: 560px;
+    }
+
+    .capa-series img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        /* Mantém o capacete como referência */
+        object-position: 10% center;
+
+        filter: blur(2px);
+    }
+
+    .capa-content {
+        width: 80%;
+
+        top: 58%;
+    }
+
+    .capa-content h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .capa-series {
+        height: 650px;
+    }
+
+    .capa-series img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        /*
+        Mantém a parte esquerda da imagem.
+        O capacete continua aparecendo.
+        */
+        object-position: 5% center;
+
+        filter: blur(2px);
+    }
+
+    .capa-content {
+        width: 85%;
+
+        top: 65%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    .capa-content h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+
+        margin-bottom: 2vh;
+    }
+
+    .capa-content p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+}
+
+
+/* =====================================================
+   CELULARES PEQUENOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .capa-series {
+        height: 700px;
+    }
+
+    .capa-series img {
+        object-position: left center;
+
+        filter: blur(2px);
+    }
+
+    .capa-content {
+        width: 88%;
+        top: 68%;
+    }
+
+    .capa-content h1 {
+        font-size: 2rem;
+    }
+
+    .capa-content p {
+        font-size: .95rem;
+    }
+
+}
+
+/*=======================================================================================
+ULTIMAS SERIES
+=======================================================================================*/
+
+.container-ultimas {
+    display: grid;
+
+    /* Cada card mantém 180px, mas quebra para a próxima linha */
+    grid-template-columns: repeat(auto-fit, 180px);
+
+    gap: 3vh 1vw;
+    justify-content: center;
+
+    margin-top: 3vh;
+}
+
+
+/*=======================================================================================
+CARD
+=======================================================================================*/
+
+.serie-ultimas {
+    width: 180px;
+    cursor: pointer;
+
+    /* Estado inicial do fade-in */
+    opacity: 0;
+    transform: translateX(-80px);
+    filter: blur(6px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22, .61, .36, 1),
+        filter .8s ease;
+}
+
+
+/* Estado depois que aparece */
+
+.serie-ultimas.show {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+
+/*=======================================================================================
+IMAGEM
+=======================================================================================*/
+
+.serie-ultimas img {
+    width: 100%;
+    height: 265px;
+    display: block;
+    border-radius: 4px;
+
+    /* Reserva o espaço da borda para não empurrar nada */
+    border: 2px solid transparent;
+    box-sizing: border-box;
+
+    transition:
+        transform .3s ease-in-out,
+        box-shadow .5s ease,
+        border-color .5s ease;
+}
+
+
+/*=======================================================================================
+TÍTULO
+=======================================================================================*/
+
+.serie-ultimas h3 {
+    margin-top: 2vh;
+}
+
+
+/*=======================================================================================
+HOVER DO CARD
+=======================================================================================*/
+
+.serie-ultimas:hover {
+    color: red;
+}
+
+
+/*=======================================================================================
+HOVER DA IMAGEM
+=======================================================================================*/
+
+.serie-ultimas:hover img {
+    transform: translateY(-1.4vh);
+
+    box-shadow:
+        0 0 25px rgba(230, 36, 41, .8);
+
+    border-color: red;
+}
+
+
+/*=======================================================================================
+TABLET
+=======================================================================================*/
+
+@media (max-width: 900px) {
+
+    .container-ultimas {
+        grid-template-columns: repeat(auto-fit, 180px);
+        gap: 3vh 15px;
+    }
+}
+
+
+/*=======================================================================================
+CELULAR
+=======================================================================================*/
+
+@media (max-width: 600px) {
+
+    .container-ultimas {
+        grid-template-columns: repeat(2, 180px);
+        justify-content: center;
+        gap: 30px 12px;
+    }
+}
+
+
+/*CELULAR PEQUENO */
+
+@media (max-width: 400px) {
+
+    .container-ultimas {
+        grid-template-columns: 180px;
+        justify-content: center;
+    }
+}
+
+/*========================================================================================
+Propaganda Disney+
+========================================================================================*/
+.disneyplus{
+  display: flex;
+  background-color: #111;
+  color: white;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+}
+.container-propaganda{
+  margin: 0 auto; 
+  text-align: center;
+  padding: 4%;
+}
+.disneyplus h2{
+  margin: 2vh;
+}
+.filmes-propaganda{
+  width: 75vw;
+  height: 100%;
+  transform: translateX(-1vw);
+  user-select: none;
+}
+.disneyplus button{
+  background: #ff1010;
+  color: white;
+
+  padding: 14px 45px;
+
+  margin-top: 7vh;
+
+  border-radius: 4px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 0 #8b0000;
+
+  transition: 0.15s;
+}
+
+.disneyplus button:hover{
+  transform: scale(1.05);
+}
+
+.disneyplus button:active{
+  transform: translateY(5px);
+
+  box-shadow: none;
+}
+
+
+/*=========================================================
+Tablet
+=========================================================*/
+
+@media (max-width: 992px){
+
+    .container-propaganda{
+        width: 100%;
+        padding:5%;
+        
+    }
+
+    .filmes-propaganda{
+        width:45%;
+    }
+
+    .disneyplus h2{
+        font-size:1.7rem;
+    }
+
+}
+
+
+/*==========================================================================================
+CARROSSEL NOTÍCIAS
+==========================================================================================*/
+
+.carrossel-noticias{
+    width:100%;
+    margin: 20vh auto;
+}
+
+.titulo-carrossel{
+
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom: -9vh;
+
+}
+
+.titulo-carrossel h2{
+    margin-left: 5vw;
+    font-weight:bold;
+
+}
+
+.botoes-carrossel{
+
+    display:flex;
+    gap:12px;
+    margin-right: 5vw;
+}
+
+.botoes-carrossel button{
+
+    width:48px;
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ff3131;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:.25s;
+
+}
+
+.botoes-carrossel button:hover{
+
+    transform:scale(1.08);
+
+    background:#c90000;
+
+}
+
+.slider{
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    scroll-behavior:smooth;
+
+    scrollbar-width:none;
+
+    cursor:grab;
+
+    margin-top: 11vh;
+
+    margin-left: 5vw;
+}
+
+.slider::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.slider.dragging{
+
+    cursor:grabbing;
+
+    scroll-behavior:auto;
+
+}
+
+.slider-track{
+
+    display:flex;
+
+    gap:25px;
+
+    width:max-content;
+
+    padding:15px 5px;
+
+}
+
+.card-noticia{
+
+    position:relative;
+
+    min-width:200px;
+
+    height: 300px;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+    flex-shrink:0;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+    transition:
+    transform .35s,
+    box-shadow .35s;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.card-noticia img{
+
+    width: 45vw;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+.card-noticia:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card-noticia:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+
+    padding:30px;
+
+    color:white;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.95),
+        rgba(0,0,0,.45),
+        transparent
+    );
+
+}
+
+.overlay h2{
+
+    font-size:1.45rem;
+
+    margin-bottom:12px;
+
+    line-height:1.3;
+
+}
+
+.overlay p{
+
+    color:#ddd;
+
+    line-height:1.5;
+
+}
+
+.card-noticia::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:0%;
+
+    height:4px;
+
+    background:#ff3131;
+
+    transition:.35s;
+
+}
+
+.card-noticia:hover::after{
+
+    width:100%;
+
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px){
+
+    .carrossel-noticias{
+        width: 100%;
+        margin: 15vh auto;
+    }
+
+    .titulo-carrossel{
+        margin-bottom: -6vh;
+        padding: 0 4vw;
+    }
+
+    .titulo-carrossel h2{
+        margin-left: 0;
+        font-size: 1.7rem;
+    }
+
+    .botoes-carrossel{
+        margin-right: 0;
+        gap: 10px;
+    }
+
+    .botoes-carrossel button{
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .slider{
+        margin-top: 9vh;
+        margin-left: 4vw;
+    }
+
+    .slider-track{
+        gap: 20px;
+        padding: 15px 4px;
+    }
+
+    .card-noticia{
+        min-width: 300px;
+        height: 430px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px){
+
+    .carrossel-noticias{
+        width: 100%;
+        margin: 12vh auto;
+    }
+
+    .titulo-carrossel{
+        padding: 0 5vw;
+        margin-bottom: -4vh;
+    }
+
+    .titulo-carrossel h2{
+        margin-left: 0;
+        font-size: 1.35rem;
+        white-space: nowrap;
+    }
+
+    .botoes-carrossel{
+        margin-right: 0;
+        gap: 7px;
+    }
+
+    .botoes-carrossel button{
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .slider{
+        margin-top: 7vh;
+        margin-left: 5vw;
+    }
+
+    .slider-track{
+        gap: 15px;
+        padding: 15px 4px;
+    }
+
+    .card-noticia{
+        min-width: 260px;
+        height: 380px;
+    }
+
+    .overlay{
+        padding: 22px;
+    }
+
+    .overlay h2{
+        font-size: 1.2rem;
+        line-height: 1.25;
+    }
+
+    .overlay p{
+        font-size: .9rem;
+        line-height: 1.4;
+    }
+
+    .categoria{
+        padding: 5px 11px;
+        margin-bottom: 10px;
+        font-size: .7rem;
+    }
+
+}
+
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  width: 100%;
+  min-height: 289px;
+
+  background-color: #b30000;
+  background-image: url("../images/cristais-rodape.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8%;
+  flex-wrap: wrap; /* 🔥 RESPONSIVO */
+}
+
+.rodape p{
+  margin-bottom: 8%;
+}
+/* LOGO */
+#logo-rodape {
+  width: 250px;
+  margin-right: -40px;
+}
+
+.link-rodape {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.link-rodape:hover {
+  color: #ff4d4d;
+}
+
+/* UNLIMITED */
+.unlimited-col {
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+#unlimited-rodape {
+  width: 120px;
+}
+
+/* REDES */
+.social-col {
+  flex-wrap: wrap;
+
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  
+}
+
+.icons img {
+  width: auto;
+  height: 30px;
+  opacity: 50%;
+  transition: 0.3s ease-in-out;
+  margin-top: 15px;
+  margin-left: 5px;
+  
+  -webkit-user-drag: none;
+  user-select: none; /* Evita seleção */
+  -webkit-user-select: none; /* Safari */
+}
+
+.icons img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ========================= */
+/* 📱 RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .rodape {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding-bottom: 3%;
+  }
+
+  .col {
+    align-items: center;
+  }
+
+  .unlimited-col {
+    flex-direction: column;
+  }
+
+  .social-col {
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  #logo-rodape {
+    width: 160px;
+  }
+
+  #unlimited-rodape {
+    width: 90px;
+  }
+
+  .icons img {
+    height: 28px;
+    margin-bottom: 30px;
+  }
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+/* ESTADO INICIAL */
+.fade {
+  opacity: 0;
+  transform: translateY(30px); /* vem de baixo */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* QUANDO ENTRA NA TELA */
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-item {
+  opacity: 0;
+  transform: translateX(60px); /* vem da direita */
+  transition: all 0.6s ease;
+}
+
+.fade-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}

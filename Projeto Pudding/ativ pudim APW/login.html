@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Pudding</title>
+</head>
+<body>
+<div class="login-container">
+    <div class="login-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4299e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <img class="img" src="./imagens/logo.jpg" alt="">
+        </svg>
+        <h1>Bem-vindo</h1>
+        <p>Faça login para continuar</p>
+        <h2>Pudding</h2>
+    </div>
+    
+    <form action="https://example.com/login" method="POST">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        
+        <button type="submit" class="login-button">
+            Entrar
+        </button>
+    </form>
+    
+    <div class="forgot-password">
+        <a href="">Esqueceu sua senha?</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1039 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.Cabeçalho {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background-color: #162026;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    transition: transform 0.4s ease;
+
+    /* SOMBRA 3D */
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.25),
+        0 15px 35px rgba(0, 0, 0, 0.20),
+        0 2px 4px rgba(255, 255, 255, 0.03);
+}
+
+.Cabeçalho.hide {
+    transform: translateY(-100%);
+}
+
+/* LOGO */
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.Logotipo{
+    width: 100px;
+    display: block;
+}
+
+
+/* LINKS CENTRALIZADOS */
+.Navegações{
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* LINKS */
+.Nav{
+    position: relative;
+    display: inline-block;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    transition: color .3s ease;
+}
+
+
+/* LINHA DO HOVER */
+.Nav::after{
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2.5px;
+
+    background: linear-gradient(
+        90deg,
+        #ff0033,
+        #ff3045
+    );
+
+    border-radius: 20px;
+
+    transition: width .35s ease;
+}
+
+.Nav:hover{
+    color: #ff3045;
+}
+
+.Nav:hover::after{
+    width: 100%;
+}
+
+
+/* PREMIUM */
+.Premium{
+    margin-left: auto;
+
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #ff1e1e,
+        #b30000
+    );
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    padding: 12px 35px;
+
+    color: white;
+
+    width: 150px;
+
+    font-family:
+        'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+
+    cursor: pointer;
+}
+
+.Premium::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:70%;
+    height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
+    transform:skewX(-25deg);
+    transition:0.5s;
+    z-index:-1;
+}
+
+.Premium:hover{
+    transform:translateY(-5px);
+    background:linear-gradient(135deg,#ff3b3b,#d40000);
+    box-shadow:0 15px 30px rgba(255,0,0,0.5);
+}
+
+.Premium:hover::after{
+    left:130%;
+}
+
+.Premium:active{
+    transform:scale(0.95);
+}
+
+/* botão hambúrguer escondido no desktop */
+.menu-toggle{
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================================================
+   SEGURANÇA EM EMPRESAS
+========================================================= */
+
+.Empresa-section{
+
+    padding: 100px 7% 120px 7%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #24323B 0%,
+            #1d2b34 100%
+        );
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.Empresa-header{
+
+    max-width: 850px;
+
+    margin: 0 auto 70px auto;
+
+    text-align: center;
+
+}
+
+
+.Empresa-tag{
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    margin-bottom: 18px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,48,69,.5);
+
+    background: rgba(255,0,40,.05);
+
+    color: #ff3045;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.Empresa-header h2{
+
+    margin: 0;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+}
+
+
+.Empresa-header h2::after{
+
+    content: "";
+
+    display: block;
+
+    width: 70px;
+    height: 3px;
+
+    margin: 18px auto 20px auto;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff0033,
+            #ff5265
+        );
+
+}
+
+
+.Empresa-header p{
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #bfcbd1;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.Empresa-cards{
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.Empresa-card{
+
+    position: relative;
+
+    min-height: 470px;
+
+    padding: 35px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #182832,
+            #111c23
+        );
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+}
+
+
+.Empresa-card::before{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff0033,
+            #ff5265
+        );
+
+    transition: width .4s ease;
+
+}
+
+
+.Empresa-card:hover{
+
+    transform: translateY(-10px);
+
+    border-color: rgba(255,48,69,.5);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35);
+
+}
+
+
+.Empresa-card:hover::before{
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.Empresa-icon{
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        145deg,
+        #4B7B98,
+        #365c72
+    );
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.2);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.Empresa-icon img{
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+}
+
+
+.card:hover .Empresa-icon{
+    transform: translateY(-4px) scale(1.05);
+
+    background: linear-gradient(
+        145deg,
+        #5c8dab,
+        #406b84
+    );
+}
+
+
+/* =========================================================
+   NÚMERO
+========================================================= */
+
+.Empresa-numero{
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #ff3045;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.Empresa-card h3{
+
+    margin: 0 0 18px 0;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.Empresa-card p{
+
+    margin: 0 0 18px 0;
+
+    color: #b9c5ca;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    text-align: left;
+
+}
+
+
+/* =========================================================
+   DEFESA EM PROFUNDIDADE
+========================================================= */
+
+.Defesa-section{
+
+    max-width: 1400px;
+
+    margin: 130px auto 0 auto;
+
+    padding: 80px;
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #182832,
+            #111c23
+        );
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+
+}
+
+
+.Defesa-texto h2{
+
+    margin: 0 0 20px 0;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 36px;
+
+    line-height: 1.3;
+
+}
+
+
+.Defesa-texto p{
+
+    color: #b9c5ca;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   CAMADAS
+========================================================= */
+
+.Camadas{
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.Camada{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    background: #24323B;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 14px;
+
+    transition: .3s ease;
+
+}
+
+
+.Camada:hover{
+
+    transform: translateY(-5px);
+
+    border-color: rgba(75,123,152,.6);
+
+}
+
+
+.Camada > span{
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: white;
+
+    background: #4B7B98;
+
+    border-radius: 11px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+
+.Camada h3{
+
+    margin: 0 0 6px 0;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 16px;
+
+}
+
+
+.Camada p{
+
+    margin: 0;
+
+    color: #9fadb3;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   CONCLUSÃO
+========================================================= */
+
+.Empresa-conclusao{
+
+    max-width: 1100px;
+
+    margin: 100px auto 0 auto;
+
+    padding: 35px 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    background: rgba(22,32,38,.7);
+
+    border-left: 4px solid #db001d;
+
+    border-radius: 12px;
+
+}
+
+
+.Conclusao-icon{
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #4B7B98;
+
+    border-radius: 15px;
+
+    font-size: 30px;
+
+}
+
+
+.Empresa-conclusao h2{
+
+    margin: 0 0 8px 0;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 21px;
+
+}
+
+
+.Empresa-conclusao p{
+
+    margin: 0;
+
+    color: #aebcc2;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.Footer{
+
+    width: 100%;
+
+    min-height: 320px;
+
+    padding-top: 50px;
+
+    background-image:
+        linear-gradient(
+            rgba(10,18,23,.35),
+            rgba(10,18,23,.35)
+        ),
+        url('img/Fundo-footer.png');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+.Logo-footer{
+
+    width: 120px;
+
+}
+
+
+.Legenda-logo{
+
+    margin-top: 10px;
+
+    color: #c7d1d5;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+.Links{
+
+    margin: 0 0 15px 0;
+
+    color: #ff3045;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    font-family: "Montserrat", sans-serif;
+
+}
+
+
+.Linha-footer{
+
+    margin: 8px 0;
+
+    color: #d0d8dc;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+}
+
+
+.Container-Footer{
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 0 6%;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr 1.5fr 1fr;
+
+    gap: 50px;
+
+}
+
+
+.Copy {
+    color: #9caab0;
+
+    text-align: center;
+
+    margin: 45px auto 0;
+
+    padding: 20px 30px;
+
+    max-width: 1400px;
+
+    border-top:
+        1px solid rgba(255,255,255,.15);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1200px){
+
+    .Empresa-cards{
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .Defesa-section{
+
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+
+
+    .Container-Footer{
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px){
+
+    .Empresa-section{
+
+        padding: 70px 6% 90px 6%;
+
+    }
+
+
+    .Empresa-header h2{
+
+        font-size: 34px;
+
+    }
+
+
+    .Empresa-cards{
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .Empresa-card{
+
+        min-height: auto;
+
+    }
+
+
+    .Defesa-section{
+
+        grid-template-columns: 1fr;
+
+        padding: 45px 30px;
+
+        gap: 40px;
+
+    }
+
+
+    .Camadas{
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .Empresa-conclusao{
+
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+
+}
+
+
+@media (max-width: 600px){
+
+    .Empresa-header h2{
+
+        font-size: 29px;
+
+    }
+
+
+    .Empresa-header p{
+
+        font-size: 15px;
+
+    }
+
+
+    .Empresa-card{
+
+        padding: 30px 25px;
+
+    }
+
+
+    .Defesa-section{
+
+        padding: 35px 22px;
+
+    }
+
+
+    .Defesa-texto h2{
+
+        font-size: 28px;
+
+    }
+
+
+    .Empresa-conclusao{
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px 25px;
+
+    }
+
+
+    .Container-Footer{
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .Footer{
+
+        padding-bottom: 30px;
+
+    }
+
+}
