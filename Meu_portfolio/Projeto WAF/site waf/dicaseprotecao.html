@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicas e proteção</title>
+    <link rel="stylesheet" href="css/dicas_e_protecao.css">
+</head>
+<body>
+    <section class="primeira">
+        <main class="cabecalho">
+            <p class="opcao fade"> <a class="link" href="WAF.html">Início</a></p>
+            <p class="opcao fade"> <a class="link" href="seguranca.html">Segurança da Informação</a></p>
+            <p class="opcao fade"> <a class="link" href="funcionamento.html">Funcionamento WAF</a></p>
+            <p class="opcao fade"> <a class="link" id="logoutButton">Sair</a></p>
+        </main>
+        <main class="itens">
+            <p id="titulo" class="fade"><b>Dicas</b> e <b>Proteção:</b> <br>WAF</p>
+        </main>
+  </section>
+
+  <section class="segunda">
+        <h1 class="subtitulo fade">Como se proteger</h1>
+        <div style="display: flex; gap: 60px;">
+            <div>
+                <p class="fade">O WAF (Web Application Firewall) é uma ferramenta essencial para proteger sites e       aplicações web contra ataques cibernéticos. Ele atua como uma barreira inteligente entre o       usuário e o servidor, analisando cada requisição que chega antes de permitir o acesso à       aplicação.</p>
+                <h1 style="margin-top: 40px;" class="fade">1. Mantenha o WAF sempre atualizado</h1>
+                <p class="fade" style="margin-top: 20px;">As regras de segurança evoluem constantemente.
+                    <br>
+                    <br>
+                   ➡️  Atualize o WAF e as regras OWASP CRS regularmente para garantir proteção contra as ameaças mais                    recentes (como novos tipos de injeção e scripts maliciosos).</p>
+             </div>
+            <img class="fade" id="logo" src="img/Dicas/escudo.png">     
+        </div>
+        <h1 style="margin-top: 40px;" class="fade">2. Combine o WAF com outras camadas de segurança</h1>
+        <p class="fade" style="margin-top: 20px;">O WAF não substitui o firewall de rede nem o antivírus.
+            <br>
+            <br>
+           ➡️ Use-o junto com HTTPS, firewall tradicional, antivírus e autenticação forte para criar uma defesa em profundidade.</p>
+
+           <h1 class="fade" style="margin-top: 40px;">3. Monitore os logs com frequência</h1>
+           <p class="fade" style="margin-top: 20px;">Verifique os relatórios de bloqueio e tentativas de ataque registrados pelo WAF.
+            <br>
+            <br>
+              ➡️ Isso ajuda a detectar padrões de ataque, endereços IP suspeitos e possíveis vulnerabilidades no seu site.</p>
+
+    <section style="display: flex; gap: 40px; margin-top: 30px;" class="fade">
+            <img src="img/Dicas/lupa.png" id="lupa" class="fade">
+            <div>
+                <h1 class="fade">4. Personalize suas regras</h1>
+                <p class="fade" style="margin-top: 20px;"><b>Por exemplo:</b> permitir certos parâmetros em formulários legítimos, mas bloquear entradas suspeitas.</p>
+
+                <h1 class="fade" style="margin-top: 40px;">5. Use HTTPS e cabeçalhos de segurança</h1>
+                <p class="fade" style="margin-top: 20px;">Mesmo com o WAF, é essencial proteger a transmissão de dados.
+                    <br>
+                    <br>
+                    ➡️ Ative SSL/TLS (HTTPS) e adicione cabeçalhos de segurança HTTP como:
+                    Content-Security-Policy
+                    <br>
+                    <br>
+                    <li class="fade" style="margin-left: 16px;">X-XSS-Protection</li>
+                    <li class="fade" style="margin-left: 16px;">Strict-Transport-Security</li>
+                    <li class="fade" style="margin-left: 16px;">Essas medidas reduzem as chances de ataques de injeção e sequestro de sessão.</li>
+                </p>
+            </div>
+    </section>
+    <h1 class="fade" style="margin-top: 40px;">6. Teste a eficácia do seu WAF</h1>
+    <p style="margin-top: 20px;">Use ferramentas seguras como:
+       <br>
+       <br>
+       <b>OWASP ZAP</b> ou <b>Burp Suite</b> (para simular ataques)
+       SQLMap (para testar injeções)
+       <br>
+       <br>
+       ➡️ Isso ajuda a saber se o WAF está realmente bloqueando ameaças e permite melhorar suas   configurações.</p>
+        
+<hr style="margin-top: 50px;">
+    <section style="display: flex; gap: 695px; margin-bottom: -40px;" class="fade">
+      <main style="display: flex;">
+        <p style="font-size: 15px; margin-top: 29px;"> © 2025 ETEC PROFESSOR ADHEMAR BATISTA HEMÉRITAS</p>
+      </main>
+      <p style="font-size: 15px; margin-top: 29px;">2º Infonet</p>
+    </section>
+
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

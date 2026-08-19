@@ -1,0 +1,151 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html, body {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+section.primeira {
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column; /* mantém o cabeçalho acima e os itens no centro */
+}
+
+.cabecalho {
+  display: flex;
+  gap: 25px; /* espaço entre as opções */
+  padding: 20px;
+  margin-bottom: 35px;
+  margin-left: 715px;
+  margin-top: 10px;
+}
+
+.itens {
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+}
+
+.imagem1 {
+  margin-right: 50px;
+  width: 550px;
+}
+
+#titulo {
+  font-size: 4em;
+  transform: translateY(-10px);
+}
+
+section.segunda {
+  background: linear-gradient(
+    to bottom,
+    rgba(183, 195, 201, 1) 0px,
+    rgba(183, 195, 201, 1) 500px,
+    white 1380px,
+    white 100%
+  );
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  padding: 60px;
+  width: 100%;
+}
+
+.opcao {
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* linha "invisível" inicialmente */
+.opcao::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* distância da linha para o texto */
+  width: 0%; /* começa com 0 */
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease; /* animação suave */
+}
+.opcao:hover::after {
+  width: 100%;
+}
+.link{
+  text-decoration: none;
+  color: white;
+}
+#tech{
+  width: 1800px;
+}
+#cadeadotec{
+    width: 550px;
+    transform: translateY(-50px);
+}
+#triade{
+    margin-top: 30px;
+    background-color: rgb(124, 145, 154);
+    width: 100%;
+    border-radius: 30px;
+    padding: 25px;
+    display: flex;
+    gap: 40px;
+}
+.linha-vertical {
+  width: 2px;              /* espessura da linha */
+  height: 120px;           /* altura */
+  background-color: #000000;  /* cor da linha */
+  margin: 0 20px;          /* espaço lateral */
+  margin-top: 75px;
+}
+#super_man{
+    width: 500px;
+}
+#papel{
+  font-size: 55px; 
+  text-align: center;
+  margin-top: 60px; 
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ff6f00, #f44336, #8e24aa, #42a5f5, #ff6f00);
+  background-size: 400%;
+  background-position: 0% 50%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: movimentoDegrade 6s linear infinite;
+}
+.papel:hover {
+  background-position: right;
+}
+@keyframes movimentoDegrade {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fade {
+  opacity: 0;
+  transform: translateX(50px); /* começa vindo da esquerda */
+  transition: opacity 1s ease, transform 0.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateX(0);
+}

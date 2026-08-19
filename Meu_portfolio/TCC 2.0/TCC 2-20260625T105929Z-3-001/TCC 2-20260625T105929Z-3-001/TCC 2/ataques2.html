@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ataques Cyberneticos</title>
+    <link rel="stylesheet" href="ataques.css">
+</head>
+<body>
+    <header class="Cabeçalho">
+        <a href="index2.html"><img class="Logotipo" src="img/logotipo.png" alt=""></a>
+        <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+        <nav id="nav" class="Navegações">
+            <a class="Nav" href="sobre-segurança2.html">Sobre segurança</a>
+            <a class="Nav" href="dicas2.html">Dicas para usuários</a>
+            <a class="Nav" href="empresas2.html">Segurança em empresas</a>
+            <a class="Nav" href="finanças2.html">Finanças</a>
+            <a class="Nav" href="ataques2.html">Principais ataques</a>
+        </nav>
+        <img class="Foto" src="Firebase pronto/imagens/ft de perfil.png" alt="">
+    </header>
+
+    <main>
+        <div class="Faixa">
+            <h1 class="Texto-faixa">Principais ataques cyberneticos</h1>
+        </div>
+    </main>
+
+    <div class="Meio-Faixa">
+        <p class="TMeio-faixa"> <b>Os ataques cibernéticos estão cada vez mais presentes no ambiente digital, afetando tanto usuários quanto empresas. Conhecer os principais tipos de ataques é essencial para prevenir riscos e proteger informações sensíveis. </b> </p>
+    </div>
+
+    <div class="Faixa3">
+        <p class="Titulo-faixa3"><b> Tipos de ataques</b></p>
+
+
+               <div class="Explicação-faixa3">
+    <div class="conteudo-ataque">
+        <p class="Titulo-texto"><b>Ransomware (sequestro de dados)</b></p>
+        <div class="video">
+            <video controls>
+                <source src="Videos para adicionar no site/Video - Rasonware.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+      <div class="Explicação-faixa3">
+    <div class="conteudo-ataque">
+        <p class="Titulo-texto"><b>Phishing</b></p>
+        <div class="video">
+            <video controls>
+                <source src="Videos para adicionar no site/Video - Pishing.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+      <div class="Explicação-faixa3">
+    <div class="conteudo-ataque">
+        <p class="Titulo-texto"><b>Cavalo de Troia (trojan)</b></p>
+        <div class="video">
+            <video controls>
+                <source src="Videos para adicionar no site/Video - Trojan.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+        <div class="Explicação-faixa3">
+    <div class="conteudo-ataque">
+        <p class="Titulo-texto"><b>Cryptojacking</b></p>
+        <div class="video">
+            <video controls>
+                <source src="Videos para adicionar no site/Video - Crypto.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+    <footer class="Footer">
+        <div class="Container-Footer">
+            <div>
+                <img class="Logo-footer" src="img/logotipo.png" alt="">
+                <p class="Legenda-logo">Site acadêmico focado em <br> segurança da informação aplicada <br> ao controle financeiro.</p>
+            </div>
+
+            <div>
+                <p class="Links">Links</p>
+                <p class="Linha-footer">Sobre segurança</p>
+                <p class="Linha-footer">Dicas para usuarios</p>
+                <p class="Linha-footer">Segurança em empresas</p>
+                <p class="Linha-footer">Finanças</p>
+                <p class="Linha-footer">Principais Ataques</p>
+            </div>
+
+            <div>
+                <p class="Links">Projeto Academico</p>
+                <p class="Linha-footer"><b>Curso:</b> Informática para Internet</p>
+                <p class="Linha-footer"><b>Alunos:</b> Gustavo, Lucas, Henrique, Samuel, Matheus</p>
+                <p class="Linha-footer"><b>Instituição:</b> ETEC Professor Adhemar  Batista  Heméritas</p>
+                <p class="Linha-footer"><b>Ano:</b> 2026</p>
+            </div>
+
+            <div>
+                <p class="Links">Contato</p>
+                <p class="Linha-footer"><b>Email:</b>xxxxxxxxxxx@gmail.com</p>
+                <p class="Linha-footer"><b>Github:</b> guithub.com/xxxxxxx</p>
+            </div>
+        </div>
+        <div>
+        <p class="Copy">&copy; 2026 PrimeWay - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        const links = document.querySelectorAll(".Nav");
+
+const mediaQuery = window.matchMedia("(max-width: 1600px)");
+
+function mudarMenu(e) {
+    if (e.matches) {
+        links[0].textContent = "Segurança";
+        links[1].textContent = "Dicas";
+        links[2].textContent = "Empresas";
+        links[3].textContent = "Finanças";
+        links[4].textContent = "Ataques";
+    } else {
+        links[0].textContent = "Sobre segurança";
+        links[1].textContent = "Dicas para usuários";
+        links[2].textContent = "Segurança em empresas";
+        links[3].textContent = "Finanças";
+        links[4].textContent = "Principais ataques";
+    }
+}
+
+mudarMenu(mediaQuery);
+mediaQuery.addEventListener("change", mudarMenu);
+
+mudarMenu(mediaQuery);
+mediaQuery.addEventListener("change", mudarMenu);
+
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav");
+
+toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+    </script>
+
+
+</body>
+</html>

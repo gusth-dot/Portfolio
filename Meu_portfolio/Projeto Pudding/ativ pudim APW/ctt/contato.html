@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/contato.css">
+    <title>Pudding</title>
+</head>
+<body>
+   <header>
+       <nav>
+           <div class="cabecalho">
+                <img class="logo" src="../imagens/logo.jpg" alt="logo">
+                <h1 class="titulo">Pudding</h1>
+                <ul class="menu">
+                    
+                    <li><a href="../historia.html" target="_parent">História do pudim</a></li>
+                    <li><a href="../tipos.html" target="_parent">Tipos de pudim</a></li>
+                    <li><a href="../receita.html">Receitas</a></li>
+                    <li><a href="../posp.html">Peça seu pudim</a></li>
+                    
+                </ul>
+            
+                
+            </div>
+       </nav>
+   </header> 
+   <ul>
+   <div id="ctt">
+    <li><a href="ctt/contato.html">Contato</a></li>
+    <li><a href="ctt/lojas.html">Lojas Próximas</a></li>
+    <li><a href="login.html">Favoritos</a></li>
+    <li><a href="ctt/app.html">APP</a></li>
+    <li><a href="login.html">Sacola</a></li>
+    </ul>
+    <div id="divBusca">
+        <input type="text" id="txtBusca" placeholder="Buscar..."/>
+        <img src="../imagens/search.png" id="btnBusca" alt="Buscar"/>
+    </div>
+    <main class="container">
+        <div class="contact-form">
+            <h2 id="title" >Entre em Contato</h2>
+            <p>Adoraríamos ouvir você! Preencha o formulário abaixo.</p>
+            <form action="https://formspree.io/f/sua-chave-aqui" method="POST">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Assunto</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <div class="info-card">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                </svg>
+                <h3>Endereço</h3>
+                <p>Rua dos Pudins, 123<br>Doce Cidade - SP</p>
+            </div>
+            <div class="info-card">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                </svg>
+                <h3>Telefone</h3>
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="info-card">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M17,17H7V15H17M17,13H7V11H17M17,9H7V7H17"/>
+                </svg>
+                <h3>E-mail</h3>
+                <p>contato@pudinlicious.com</p>
+            </div>
+        </div>
+    </main>
+    </body>
+    </html>

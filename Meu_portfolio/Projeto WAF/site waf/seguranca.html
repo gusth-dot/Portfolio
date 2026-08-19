@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transição de Cores</title>
+  <link rel="stylesheet" href="css/seguranca.css">
+</head>
+<body>
+  <section class="primeira">
+    <main class="cabecalho">
+        <p class="fade opcao"> <a class="link" href="WAF.html">Início</a></p>
+        <p class="fade opcao"> <a class="link" href="funcionamento.html">Funcionamento do WAF</a></p>
+        <p class="fade opcao"> <a class="link" href="dicaseprotecao.html">Dicas e proteção</a></p>
+        <p class="opcao fade"> <a class="link" id="logoutButton">Sair</a></p>
+    </main>
+    <main class="itens">
+    <img class="fade imagem1" src="img/seguranca/escudo.gif">
+    <p id="titulo" class="fade"><b>Sobre</b> <br> Segurança da informação</p>
+    </main>
+  </section>
+
+  <section class="segunda">
+    
+    <h1 style="font-size: 70px; margin-top: 20px;" class="fade">O que é segurança da <br>informação</h1>
+
+    <main style="display: flex;" >
+    <div style="margin-top: 20px; margin-right: 20px;" >
+    <p class="fade">A Segurança da Informação é o conjunto de práticas, políticas e tecnologias criadas para proteger dados e sistemas contra acessos não autorizados, perdas, alterações ou destruições.</p>
+        <br>
+    <p class="fade">Busca garantir a confiança nos dados que circulam dentro e fora de uma organização — desde     informações pessoais de usuários até grandes bancos de dados corporativos.</p>
+        <br>
+    <p class="fade">Em outras palavras: é tudo o que se faz para manter as informações seguras, disponíveis e       confiáveis.</p>
+    </div>
+    <img src="img/seguranca/cadeadotec.gif" id="cadeadotec" class="fade">
+    </main>
+    
+     <h1 style="font-size: 70px; margin-top: 30px;" class="fade">A triade da Segurança da informação</h1>
+        <div id="triade" class="fade">
+            <div>
+                <h3 class="fade">1. Confidencialidade</h3><br>
+                <p class="fade">Garante que somente pessoas autorizadas possam acessar determinadas informações.
+                   Protege dados sensíveis contra vazamentos.
+                   Exemplo: criptografi de senhas, autenticação de dois fatores, permissões de usuário.
+                </p>
+            </div>
+
+<div class="linha-vertical"></div>
+
+            <div>
+                <h3 class="fade">2. Intergridade</h3><br>
+                <p class="fade">Assegura que os dados permaneçam exatos e completos, sem alterações indevidas.
+                   Qualquer modificação deve ser legítima e rastreável.
+                   Exemplo: uso de hashes, logs de auditoria e controle de versões.
+                </p>
+            </div>
+<div class="fade linha-vertical"></div>
+            <div>
+                <h3 class="fade">3. Disponibilidade</h3><br>
+                <p class="fade">Assegura que as informações e sistemas estejam acessíveis sempre que necessário.
+                   Previne interrupções causadas por ataques, falhas ou sobrecarga.
+                   Exemplo: redundância de servidores, backups e mitigação de ataques DDoS.
+                </p>
+            </div>
+        </div>
+
+     <h1 style="font-size: 70px; margin-top: 30px; margin-bottom: 20px;" class="fade">Outros conceitos importantes</h1>
+        <div style="display: flex; gap: 30px;" class="fade">
+            <img src="img/seguranca/super_man_da_informação.jpg" id="super_man" class="fade">
+            <div>
+                <h2 class="fade">Autenticidade</h2>
+                <p class="fade">Garante que quem envia ou acessa informações é realmente quem diz ser.
+                    <br> <b>Exemplo:</b> certificados digitais, assinaturas eletrônicas.</p>
+                    <br>
+                    <h2 class="fade">Responsabilidade / auditoria</h2>
+                <p>Permite rastrear ações dentro de um sistema, identificando quem fez o quê.
+                    <br> <b>Exemplo:</b>  logs de acesso e relatórios de segurança.</p>
+                    <br>
+                    <h2 class="fade">Não Repúdio</h2>
+                <p class="fade">Impede que alguém negue ter realizado uma ação digital (como enviar um e-mail ou transação).
+                    <br> <b>Exemplo:</b>assinaturas digitais e registros criptográficos.</p>
+
+            </div>
+        </div>
+
+
+        <h1 id="papel" class="fade">O Papel do WAF na Segurança da informação</h1>
+
+        <div style="display: flex; gap: 30px; margin-top: 50px; transform: translateX(-40px); margin-bottom: 70px;" class="fade">
+            <img src="img/seguranca/waf-logo.png">
+            <div>
+                <p style="transform: translatex(-30px); " class="fade">O WAF atua principalmente na camada de aplicação, protegendo sites e sistemas web:
+                <br>
+                <li class="fade">Mantém a confidencialidade dos dados ao bloquear ataques de injeção e roubo de informações.</li>
+                <li class="fade">Garante a integridade do sistema, impedindo adulterações maliciosas.</li>
+                <li class="fade">Ajuda na disponibilidade, filtrando ataques de negação de serviço (DDoS).</li></p>
+                <br><p style="transform: translateX(-30px);" class="fade">Assim, o WAF é uma ferramenta prática que aplica na web os princípios da segurança da informação.</p>
+            </div>
+        </div>
+        
+        <hr>
+    <section style="display: flex; gap: 695px; margin-bottom: -40px;" >
+      <main style="display: flex;">
+        <p style="font-size: 15px; margin-top: 20px;">©2025 ETEC PROFESSOR ADHEMAR BATISTA HEMÉRITAS</p>
+      </main>
+      <p style="font-size: 15px; margin-top: 20px;">2º Infonet</p>
+    </section>
+  </section>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+        <script src="js/firebase.js"></script>
+
+        
+    <script>
+    document.getElementById('logoutButton').addEventListener('click', async () => {
+      await window.logoutUser();
+    })
+    </script>
+
+  <script src="js/script.js">
+  </script>
+</body>
+</html>

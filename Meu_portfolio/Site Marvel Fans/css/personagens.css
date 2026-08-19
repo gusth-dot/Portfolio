@@ -1,0 +1,2871 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 90px;
+}
+
+/* ===== SCROLLBAR ===== */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: red #111;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darkred;
+}
+
+/* =========================================================================================================================
+ CABEÇALHO 
+======================================================================================================================== */
+#cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+
+  position: fixed; /* fixa no topo */
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 1000;
+
+  background: rgb(178, 0, 0);
+
+  transition: transform 0.4s ease;
+
+  padding-bottom: 1%;
+}
+
+body.dark-mode #cabecalho{
+  background: rgb(118, 0, 0);
+  transition: 0.3s ease-in-out;
+}
+
+body.dark-mode .cor-cabecalho{
+  background: rgb(118, 0, 0);
+}
+body.dark-mode p{
+  color: white;
+}
+
+/* ESCONDIDO */
+#cabecalho.hide {
+  transform: translateY(-100%);
+}
+.cor-cabecalho{
+  background-color: rgb(178, 0, 0);
+}
+.link-cabecalho:hover{
+  color: #ffd000;
+  transition: 0.3s;
+}
+
+/* Linha animada*/
+.link-cabecalho {
+  position: relative;
+  display: inline-block;
+
+  text-decoration: none;
+  color: white;
+}
+
+/* Linha abaixo da opção */
+.link-cabecalho::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 3px;
+
+  background: #ffd000;
+
+  transition: width 0.35s ease;
+
+  border-radius: 2px;
+}
+
+/* Cresce da direita para a esquerda */
+.link-cabecalho:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.login p {
+    margin: 0;
+    color: white;
+    cursor: pointer;
+
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+.login p:hover {
+    color: #ffd000;
+}
+
+.menu-item{
+  margin-top: 1%;
+}
+.menu-item > p {
+  font-size: clamp(1.1rem, 1.2vw, 1.1rem);
+  cursor: pointer;
+  color: white;
+}
+.menu-item h2{
+  margin: 0;
+  text-align: center;
+}
+.menu-item .categoria{
+  font-size: 80%;
+}
+.link-cabecalho{
+  text-decoration: none;
+  color: white;
+}
+#logo {
+  width: 12vw;
+  margin-left: 3vw;
+}
+
+/* Notícias */
+
+.notícias{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+  margin: 0 auto;
+  justify-content: center;
+}
+.noticia{
+  width: 21%;
+  cursor: pointer;
+  margin-top: 2%;
+}
+.noticia p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+.noticia:hover{
+  color: red;
+}
+.noticia img{
+  width: 100%;  /* 🔥 ocupa o card */
+  
+  max-height: 70%;
+  display: block;
+  border-radius: 2%;
+  object-fit: cover;
+}
+.categoria{
+  margin: 0;
+  color: gray;
+  cursor: pointer;
+  margin-top: 2%;
+}
+.category{
+  display: flex; 
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 1%;
+}
+.category p{
+  margin: 0;
+}
+.category p:hover{
+  color: red;
+  transform: scale(1.1);
+  transition: 0.3s
+}
+.option::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* distância da linha para o texto */
+  width: 0%; /* começa com 0 */
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  transition: width 0.3s ease; /* animação suave */
+}
+.option:hover::after{
+  width: 100%;
+}
+#opcoes{
+  display: flex;
+  gap: 2%;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+#opcoes p {
+  margin: 0 !important;
+}
+/* Filmes */
+.filmes{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.filme{
+  width: 12%;
+}
+.filme img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.filme:hover{
+  color: red;
+  transition: 0.4s;
+}
+.filme > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 1%;
+}
+
+
+/* Quadrinhos */
+
+.quadrinhos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.quadrinho{
+  width: 12%;
+  
+}
+.quadrinho img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 3%;
+  border: 1px solid black;
+}
+.quadrinho:hover{
+  color: red;
+  transition: 0.4s;
+}
+.quadrinho > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 2%;
+}
+
+/* Series */
+
+.series{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.serie{
+  width: 12%;
+}
+.serie img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.serie:hover{
+  color: red;
+  transition: 0.4s;
+}
+.serie > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 1%;
+}
+
+/* Jogos */
+.jogos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.jogo{
+  width: 12%;
+}
+.jogo img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.jogo:hover{
+  color: red;
+  transition: 0.4s;
+}
+.jogo > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 1%;
+}
+
+/* =============================== Personagens ===================================== */
+/* CONTAINER */
+.cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 3%;
+    margin-top: 2%;
+}
+/* CARD */
+.card{
+    position:relative;
+
+    width: clamp(180px, 13vw, 250px);
+    height: clamp(280px, 35vh, 340px);
+
+    border-radius: 20px 0 0 0;
+
+    display:flex;
+    justify-content:flex-end;
+    flex-direction:column;
+
+    overflow:visible;
+
+    transition:.35s;
+
+    margin: 9vh 0;
+}
+
+/* PARTE SUPERIOR */
+.card-top{
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+    height:240px;
+
+    border-radius: 20px 5px 0 0;
+
+    z-index:1;
+}
+
+/* PARTE INFERIOR */
+.card-bottom{
+    position:relative;
+
+    width:100%;
+    height: clamp(70px, 10vh, 90px);
+
+    border-radius: 0 0 20px 5px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-weight:bold;
+
+    font-size: 15px;
+
+    z-index:3;
+}
+
+/* IMAGENS */
+/* IMAGEM PADRÃO */
+.card img{
+    position:absolute;
+
+    width:190px;
+
+    left:50%;
+    transform:translateX(-50%);
+
+    bottom:40px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    transition:.4s ease;
+}
+
+/* TAMANHO ESPECÍFICO DO HOMEM DE FERRO */
+.homem-de-ferro-image{
+    width:110% !important;
+}
+
+/* HOVER */
+.card:hover .homem-de-ferro-image{
+    transform:translateX(-50%) scale(1.08);
+}
+
+
+.capitao-america-image{
+  width: 121% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .capitao-america-image{
+    transform:translateX(-50%) scale(1.08);
+}
+
+
+.thor-image{
+  width: 128% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .thor-image{
+    transform:translateX(-53%) scale(1.08);
+}
+
+.homem-aranha-image{
+  width: 99% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .homem-aranha-image{
+  transform:translateX(-50%) scale(1.08);
+}
+
+.hulk-image{
+  width: 130% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .hulk-image{
+  transform:translateX(-50%) scale(1.08);
+}
+
+/* ===== CORES ===== */
+
+.ironman .card-top{
+    background:#920000;
+}
+
+.ironman .card-bottom{
+    background:#ff1b1b;
+}
+
+/* Capitão */
+
+.capitao .card-top{
+    background:#1f2538;
+}
+
+.capitao .card-bottom{
+    background:#343b49;
+}
+
+/* Thor */
+
+.thor .card-top{
+    background:#5e0d0d;
+}
+
+.thor .card-bottom{
+    background:#3b3333;
+}
+
+/* Homem Aranha */
+
+.spiderman .card-top{
+    background:#ff1b1b;
+}
+
+.spiderman .card-bottom{
+    background:#09a7df;
+}
+
+/* Hulk */
+
+.hulk .card-top{
+    background:#98a44f;
+}
+
+.hulk .card-bottom{
+    background:#313b47;
+}
+
+/* HOVER */
+
+.card:hover{
+    transform:translateY(-8px);
+    transition:.3s;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgb(232, 232, 232);
+  padding: 2%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: 0.3s ease;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== SETA ===== */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  transform: translateX(-50%) translateY(10px);
+
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgb(0, 0, 0);
+
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  filter: drop-shadow(0 -2px 5px rgba(0,0,0,0.2));
+}
+
+/* ===== HOVER ===== */
+.menu-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-item:hover .dropdown::before {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ===================== */
+/* MENU MOBILE */
+/* ===================== */
+
+.menu-toggle{
+  display: none;
+
+  font-size: 2rem;
+  color: white;
+
+  cursor: pointer;
+
+  margin-left: auto;
+
+  z-index: 2000;
+
+  user-select: none;
+}
+
+/* ===================== */
+/* BOTÃO TEMA */
+/* ===================== */
+
+.theme-toggle{
+    display: flex;
+}
+
+.theme-toggle input{
+  display: none;
+}
+
+.toggle-label{
+  width: 65px;
+  height: 26px;
+
+  background: #e6e6e6;
+
+  border-radius: 999px;
+
+  display: block;
+
+  position: relative;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+/* Bolinha */
+.toggle-icon{
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  top: 1px;
+  left: 2px;
+
+  border-radius: 50%;
+
+  background: rgb(255, 255, 255);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  transition: .3s ease;
+}
+
+/* Tema claro */
+#theme-switch:checked + .toggle-label{
+  background: #343434;
+}
+
+/* Move a bolinha */
+#theme-switch:checked + .toggle-label .toggle-icon{
+  left: calc(100% - 26px);
+  background: rgb(32, 32, 32);
+}
+
+/* Troca o emoji */
+#theme-switch:checked + .toggle-label .toggle-icon::before{
+  content: "🌙";
+}
+
+.toggle-icon::before{
+  content: "☀️";
+}
+
+.dark-mode{
+  background: #121212;
+  color: white;
+  transition: 0.3s;
+}
+
+.dark-mode .dropdown{
+  background: #1e1e1e;
+}
+
+.dark-mode .categoria{
+  color: #bdbdbd;
+}
+
+.dark-mode .card-bottom{
+  color: white;
+}
+
+.header-actions{
+     margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 5%; /* ajuste o valor */
+    margin-right: 1%;
+}
+
+/* ===================== */
+/* RESPONSIVO TABLET/MOBILE */
+/* ===================== */
+
+/* Quando a tela começar a ficar estreita */
+@media (max-width: 1200px) {
+
+    .card.hulk {
+        display: none;
+    }
+
+    .menu-item > p,
+    .menu-item > a {
+        font-size: 1rem;
+    }
+
+    .header-actions {
+        gap: 15px;
+        margin-right: 1.5%;
+    }
+
+    .login p {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 900px){
+
+  /* CABEÇALHO */
+  #cabecalho{
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+  }
+
+  /* LOGO */
+  #logo{
+    width: 120px;
+    margin: 0;
+  }
+
+  /* BOTÃO HAMBURGUER */
+  /* BOTÃO HAMBURGUER */
+  .menu-toggle{
+    display: block;
+
+      margin-left: auto;
+      margin-right: 0;
+
+      font-size: 2.5rem;
+      transition: ease 0.3s;
+  }
+
+
+  /* ESCONDE TUDO POR PADRÃO */
+  .menu-item,
+  .login,
+  .header-actions{
+    display: none;
+  }
+
+  /* MENU ABERTO */
+  #cabecalho.active .menu-item{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: ease 0.5s;
+  }
+
+  #cabecalho.active .header-actions{
+    display: flex;
+
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 0;
+    transition: ease 0.3s;
+  }
+
+  #cabecalho.active .login{
+    display: flex;
+    align-items: center;
+  }
+
+  /* TEXTO MENU */
+  .menu-item > p,
+  .menu-item > a{
+    margin: 0;
+    font-size: 1rem;
+  }
+
+
+  /* PERSONAGENS */
+  .cards{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    justify-items: center;
+  }
+
+  .card{
+    margin: 20px 0;
+  }
+
+  /* FILTROS */
+  .category{
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+  }
+
+  .theme-toggle{
+    display: none;
+  }
+
+  /* aparece quando o menu hambúrguer abre */
+  #cabecalho.active .theme-toggle{
+    display: flex;
+    margin-top: 5%;
+  }
+
+  .login{
+    margin: 0;
+    transform: translateY(2vh);
+  }
+
+  /* DROPDOWN MOBILE */
+  .dropdown{
+    position: static;
+
+    width: 100%;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: none;
+
+    display: none;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .dropdown::before{
+    display: none;
+  }
+
+  /* ABRIR DROPDOWN */
+  .menu-item.active .dropdown{
+    display: block;
+  }
+
+  /* GRIDS */
+  .notícias,
+  .filmes,
+  .quadrinhos,
+  .series,
+  .jogos{
+    gap: 15px;
+  }
+
+  .noticia,
+  .filme,
+  .quadrinho,
+  .serie,
+  .jogo{
+    width: 45%;
+  }
+
+  /* CATEGORY */
+  .category{
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  /* LOGIN */
+  #cabecalho.active .login{
+    padding-top: 20px;
+    margin: 0;
+  }
+  .container-mais{
+    margin-bottom: 20px;
+  }
+}
+/* ===================== */
+/* MOBILE PEQUENO */
+/* ===================== */
+
+@media (max-width: 600px){
+
+  #logo{
+    width: 100px;
+  }
+
+  .menu-toggle{
+    font-size: 2.2rem;
+  }
+
+  /* LISTAS EM 1 COLUNA */
+  .notícias,
+  .filmes,
+  .quadrinhos,
+  .series,
+  .jogos,
+  .cards{
+    grid-template-columns: 1fr;
+  }
+
+  .dropdown{
+    padding: 20px;
+  }
+
+  .menu-item > p,
+  .menu-item > a{
+    font-size: 0.95rem;
+  }
+
+  .toggle-label{
+    width: 65px;
+    height: 28px;
+  }
+
+  .toggle-icon{
+    width: 24px;
+    height: 24px;
+  }
+
+  .login p{
+    font-size: 1rem;
+    transform: translateY(-2vh);
+  }
+}
+
+
+
+
+
+
+
+
+/* ====================================================================================================
+   PERSONAGENS MARVEL
+   ================================================================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+.pagina-personagens {
+
+    --vermelho: #e62429;
+    --vermelho-escuro: #7d090d;
+
+    --fundo: #f5f5f5;
+
+    --texto: #111;
+
+    --cinza: #666;
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.personagens-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    height: clamp(500px, 68vh, 720px);
+
+    overflow: hidden;
+
+    background: #050505;
+
+    isolation: isolate;
+}
+
+
+.personagens-hero-imagem {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background-image:
+        url("../images/Personagens/spiderman.jpg");
+
+    background-size: cover;
+
+    background-position: 80% 20%;
+
+    transform: scale(1.02);
+
+    filter:
+        brightness(0.62)
+        contrast(1.08);
+
+    transition:
+        transform 1s ease;
+}
+
+
+.personagens-hero:hover .personagens-hero-imagem {
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   OVERLAY HERO
+========================================================= */
+
+.personagens-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.55) 38%,
+            rgba(0, 0, 0, 0.10) 72%,
+            rgba(0, 0, 0, 0.55) 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.85),
+            transparent 60%
+        );
+}
+
+
+/* =========================================================
+   CONTEÚDO HERO
+========================================================= */
+
+.personagens-hero-conteudo {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1150px, 90%);
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    color: white;
+}
+
+
+.personagens-hero-conteudo > span {
+
+    margin-bottom: 15px;
+
+    color: #ff3b40;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+}
+
+
+.personagens-hero-conteudo h1 {
+
+    margin: 0;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(15px, 5vw, 80px);
+
+    font-weight: 900;
+
+    line-height: 0.95;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.8);
+}
+
+
+.personagens-hero-conteudo p {
+
+    width: min(600px, 100%);
+
+    margin: 25px 0 30px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÃO HERO
+========================================================= */
+
+.personagens-hero-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    background: var(--vermelho);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    border: 2px solid var(--vermelho);
+
+    transition:
+        0.3s ease;
+}
+
+
+.personagens-hero-btn:hover {
+
+    background: transparent;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(230, 36, 41, 0.3);
+}
+
+
+/* =========================================================
+   INTRODUÇÃO
+========================================================= */
+
+.personagens-intro {
+
+    width: min(850px, 90%);
+
+    margin: 100px auto 70px;
+
+    text-align: center;
+}
+
+
+.personagens-intro > span {
+
+    color: var(--vermelho);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+
+.personagens-intro h2 {
+
+    margin: 15px 0;
+
+    color: var(--texto);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    line-height: 1.15;
+}
+
+
+.personagens-intro p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: var(--cinza);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MENU DE GRUPOS
+========================================================= */
+
+.personagens-grupos-nav {
+
+    width: min(1100px, 90%);
+
+    margin: 0 auto 100px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top: 1px solid #ddd;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.personagens-grupos-nav a {
+
+    position: relative;
+
+    padding: 22px 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.personagens-grupos-nav a + a {
+
+    border-left: 1px solid #ddd;
+}
+
+
+.personagens-grupos-nav a span {
+
+    color: var(--vermelho);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.personagens-grupos-nav a:hover {
+
+    background: var(--vermelho);
+
+    color: white;
+}
+
+
+.personagens-grupos-nav a:hover span {
+
+    color: white;
+}
+
+
+/* =========================================================
+   GRUPO
+========================================================= */
+
+.grupo-personagens {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 90px 0 110px;
+
+    background: #f5f5f5;
+
+    overflow: hidden;
+}
+
+
+/* Fundo discreto */
+
+.grupo-personagens::before {
+
+    content: "";
+
+    position: absolute;
+
+    right: -150px;
+
+    top: 80px;
+
+    width: 450px;
+
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(230, 36, 41, 0.10),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO GRUPO
+========================================================= */
+
+.grupo-cabecalho {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1250px, 90%);
+
+    margin: 0 auto 50px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+}
+
+
+.grupo-cabecalho::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: -25px;
+
+    width: 45px;
+
+    height: 4px;
+
+    background: var(--vermelho);
+}
+
+
+.grupo-numero {
+
+    color: var(--vermelho);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+.grupo-cabecalho h2 {
+
+    margin: 10px 0;
+
+    color: #111;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+.grupo-cabecalho p {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.personagens-cards {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1250px, 90%);
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-wrap: nowrap;
+
+    justify-content: center;
+
+    gap: clamp(15px, 2.5vw, 35px);
+}
+
+
+/* =========================================================
+   CARD BASE
+========================================================= */
+
+.personagem-card {
+
+    position: relative;
+
+    flex: 1 1 0;
+
+    min-width: 0;
+
+    width: clamp(170px, 14vw, 245px);
+
+    height: clamp(320px, 38vw, 390px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    border-radius: 22px 5px 5px 5px;
+
+    overflow: visible;
+
+    transition:
+        transform 0.35s ease;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   PARTE SUPERIOR
+========================================================= */
+
+.personagem-card-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: calc(100% - 85px);
+
+    border-radius: 22px 5px 0 0;
+
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+.personagem-card-top::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.10),
+            transparent 40%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PARTE INFERIOR
+========================================================= */
+
+.personagem-card-bottom {
+    position: relative;
+
+    width: 100%;
+    height: 85px;
+    min-height: 85px;
+
+    padding: 12px 10px;
+
+    border-radius: 0 0 20px 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 3;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.personagem-card-bottom small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+}
+
+
+.personagem-card-bottom h3 {
+
+    margin: 0;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(13px, 1.3vw, 17px);
+
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   IMAGENS
+========================================================= */
+
+.personagem-img {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 50px;
+
+    z-index: 2;
+
+    width: 120%;
+
+    max-width: none;
+
+    height: auto;
+
+    transform:
+        translateX(-50%);
+
+    pointer-events: none;
+
+    user-select: none;
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+
+/* =========================================================
+   HOVER GERAL
+========================================================= */
+
+.personagem-card:hover {
+
+    transform:
+        translateY(-10px);
+}
+
+
+.personagem-card:hover .personagem-img {
+
+    transform:
+        translateX(-50%)
+        scale(1.07);
+}
+
+
+/* =========================================================
+   TAMANHOS ESPECÍFICOS
+========================================================= */
+
+.personagem-ironman-img {
+
+    width: 112%;
+
+    bottom: 45px;
+}
+
+
+.personagem-capitao-img {
+
+    width: 110%;
+    
+    bottom: 65px;
+}
+
+
+.personagem-thor-img {
+
+    width: 116%;
+
+    bottom: 67px;
+}
+
+
+.personagem-spiderman-img {
+
+    width: 105%;
+
+    bottom: 25px;
+}
+
+
+.personagem-hulk-img {
+
+    width: 136%;
+    left:  48%;
+    bottom: 77px;
+
+
+}
+
+
+.personagem-wolverine-img {
+
+    width: 119%;
+
+    bottom: 52px;
+}
+
+
+.personagem-deadpool-img {
+
+    width: 122%;
+    left: 45%;
+    bottom: 45px;
+}
+
+
+.personagem-storm-img {
+
+    width: 150%;
+    left: 57%;
+    bottom: 50px;
+}
+
+
+.personagem-cyclops-img {
+
+    width: 115%;
+
+    bottom: 30px;
+}
+
+
+.personagem-jean-img {
+
+    width: 150%;
+
+    bottom: 50px;
+}
+
+.personagem-starlord {
+
+    width: 128%;
+    left: 48%;
+    bottom: 25px;
+}
+
+.personagen-gamora {
+
+    width: 110%;
+    left: 57%;
+    bottom: 35px;
+}
+
+.personagen-drax {
+
+    width: 110%;
+    left: 55%;
+    bottom: 40px;
+}
+
+.personagen-rocket{
+    width: 110%;
+    bottom: 40px;
+}
+
+.personagen-groot{
+    width: 110%;
+    left: 45%;
+    bottom: 35px;
+}
+
+.personagen-reed{
+    width: 170%;
+    left: 45%;
+    bottom: 60px;
+}
+
+
+/* =========================================================
+   CORES - VINGADORES
+========================================================= */
+
+.personagem-ironman
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #b5090d,
+            #630000
+        );
+}
+
+
+.personagem-ironman
+.personagem-card-bottom {
+
+    background: #e62429;
+}
+
+
+.personagem-capitao
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #29324d,
+            #101522
+        );
+}
+
+
+.personagem-capitao
+.personagem-card-bottom {
+
+    background: #343b49;
+}
+
+
+.personagem-thor
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #7d1616,
+            #350404
+        );
+}
+
+
+.personagem-thor
+.personagem-card-bottom {
+
+    background: #3b3333;
+}
+
+
+.personagem-spiderman
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #f2292e,
+            #85070a
+        );
+}
+
+
+.personagem-spiderman
+.personagem-card-bottom {
+
+    background: #087da8;
+}
+
+
+.personagem-hulk
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #a9b85c,
+            #53602b
+        );
+}
+
+
+.personagem-hulk
+.personagem-card-bottom {
+
+    background: #313b47;
+}
+
+
+/* =========================================================
+   X-MEN
+========================================================= */
+
+.grupo-xmen {
+
+    background:
+        linear-gradient(
+            180deg,
+            #eeeeee,
+            #e6e6e6
+        );
+}
+
+
+.personagem-wolverine
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #e7bd24,
+            #8c6500
+        );
+}
+
+
+.personagem-wolverine
+.personagem-card-bottom {
+
+    background: #262626;
+}
+
+
+.personagem-deadpool
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #c80c13,
+            #560000
+        );
+}
+
+
+.personagem-deadpool
+.personagem-card-bottom {
+
+    background: #181818;
+}
+
+
+.personagem-storm
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #6877a8,
+            #262c4d
+        );
+}
+
+
+.personagem-storm
+.personagem-card-bottom {
+
+    background: #242a43;
+}
+
+
+.personagem-cyclops
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #263c72,
+            #101a38
+        );
+}
+
+
+.personagem-cyclops
+.personagem-card-bottom {
+
+    background: #18264c;
+}
+
+
+.personagem-jean
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #9b151c,
+            #430306
+        );
+}
+
+
+.personagem-jean
+.personagem-card-bottom {
+
+    background: #330306;
+}
+
+
+/* =========================================================
+   GUARDIÕES
+========================================================= */
+
+.grupo-guardioes {
+
+    background:
+        linear-gradient(
+            180deg,
+            #10121c,
+            #090a0f
+        );
+}
+
+
+.grupo-guardioes .grupo-cabecalho h2 {
+
+    color: white;
+}
+
+
+.grupo-guardioes .grupo-cabecalho p {
+
+    color: #aaa;
+}
+
+
+.personagem-star-lord
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #31568d,
+            #101b31
+        );
+}
+
+
+.personagem-star-lord
+.personagem-card-bottom {
+
+    background: #17243a;
+}
+
+
+.personagem-gamora
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #456a45,
+            #182b1c
+        );
+}
+
+
+.personagem-gamora
+.personagem-card-bottom {
+
+    background: #233b26;
+}
+
+
+.personagem-drax
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #6e3038,
+            #2d0d12
+        );
+}
+
+
+.personagem-drax
+.personagem-card-bottom {
+
+    background: #38151b;
+}
+
+
+.personagem-rocket
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #8a5a31,
+            #332013
+        );
+}
+
+
+.personagem-rocket
+.personagem-card-bottom {
+
+    background: #3b2618;
+}
+
+
+.personagem-groot
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #5d6530,
+            #252a14
+        );
+}
+
+
+.personagem-groot
+.personagem-card-bottom {
+
+    background: #30351b;
+}
+
+
+/* =========================================================
+   QUARTETO FANTÁSTICO
+========================================================= */
+
+.grupo-quarteto {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f4f4f4,
+            #e8e8e8
+        );
+}
+
+
+.personagem-reed
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #295b9b,
+            #102d55
+        );
+}
+
+
+.personagem-reed
+.personagem-card-bottom {
+
+    background: #163d6d;
+}
+
+
+.personagem-sue
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b73ae,
+            #172e4d
+        );
+}
+
+
+.personagem-sue
+.personagem-card-bottom {
+
+    background: #203f65;
+}
+
+
+.personagem-johnny
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff7a18,
+            #9e1e00
+        );
+}
+
+
+.personagem-johnny
+.personagem-card-bottom {
+
+    background: #9d2505;
+}
+
+
+.personagem-ben
+.personagem-card-top {
+
+    background:
+        linear-gradient(
+            145deg,
+            #7b633f,
+            #342718
+        );
+}
+
+
+.personagem-ben
+.personagem-card-bottom {
+
+    background: #3c3021;
+}
+
+
+/* =========================================================
+   SEÇÃO FINAL
+========================================================= */
+
+.personagens-final {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 110px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #120000,
+            #350507,
+            #0b0b0b
+        );
+
+    overflow: hidden;
+}
+
+
+.personagens-final::before {
+
+    content: "MARVEL";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: rgba(255, 255, 255, 0.025);
+
+    font-size: clamp(100px, 22vw, 350px);
+
+    font-weight: 900;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+
+.personagens-final > * {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.personagens-final span {
+
+    color: #ff3b40;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+
+.personagens-final h2 {
+
+    margin: 15px auto;
+
+    max-width: 800px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(30px, 5vw, 55px);
+
+    line-height: 1.1;
+}
+
+
+.personagens-final p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MODO ESCURO
+========================================================= */
+
+body.dark-mode .pagina-personagens {
+
+    --fundo: #090909;
+
+    --texto: white;
+
+    --cinza: #aaa;
+}
+
+
+body.dark-mode .personagens-intro h2 {
+
+    color: white;
+}
+
+
+body.dark-mode .personagens-intro p {
+
+    color: #aaa;
+}
+
+
+body.dark-mode .personagens-grupos-nav {
+
+    border-color: #333;
+}
+
+
+body.dark-mode .personagens-grupos-nav a {
+
+    color: #ddd;
+}
+
+
+body.dark-mode .personagens-grupos-nav a + a {
+
+    border-color: #333;
+}
+
+
+body.dark-mode .grupo-personagens:not(.grupo-guardioes) {
+
+    background:
+        linear-gradient(
+            180deg,
+            #141414,
+            #0c0c0c
+        );
+}
+
+
+body.dark-mode .grupo-cabecalho h2 {
+
+    color: white;
+}
+
+
+body.dark-mode .grupo-cabecalho p {
+
+    color: #aaa;
+}
+
+
+body.dark-mode .grupo-xmen,
+body.dark-mode .grupo-quarteto {
+
+    background:
+        linear-gradient(
+            180deg,
+            #141414,
+            #0b0b0b
+        );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .personagens-cards {
+
+        gap: 18px;
+    }
+
+
+    .personagem-card {
+
+        height: 350px;
+    }
+
+
+    .personagem-img {
+
+        width: 125%;
+    }
+
+
+    .personagem-ironman-img {
+
+        width: 115%;
+    }
+
+
+    .personagem-capitao-img {
+
+        width: 125%;
+    }
+
+
+    .personagem-thor-img {
+
+        width: 132%;
+    }
+
+
+    .personagem-hulk-img {
+
+        width: 135%;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET MENOR
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .personagens-hero {
+
+        height: 550px;
+    }
+
+
+    .personagens-grupos-nav {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .personagens-grupos-nav a:nth-child(3) {
+
+        border-left: none;
+
+        border-top: 1px solid #ddd;
+    }
+
+
+    .personagens-grupos-nav a:nth-child(4) {
+
+        border-top: 1px solid #ddd;
+    }
+
+
+    body.dark-mode
+    .personagens-grupos-nav a:nth-child(3),
+    body.dark-mode
+    .personagens-grupos-nav a:nth-child(4) {
+
+        border-color: #333;
+    }
+
+
+    .grupo-cabecalho {
+
+        width: 92%;
+    }
+
+
+    .personagens-cards {
+
+        width: 92%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 25px;
+    }
+
+
+    .personagem-card {
+
+        width: 100%;
+
+        height: 350px;
+    }
+
+
+    .personagem-card:nth-child(4),
+    .personagem-card:nth-child(5) {
+
+        transform: translateX(50%);
+    }
+
+
+    .personagem-card:nth-child(4):hover,
+    .personagem-card:nth-child(5):hover {
+
+        transform:
+            translateX(50%)
+            translateY(-10px);
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .personagens-hero {
+
+        height: 500px;
+    }
+
+
+    .personagens-hero-imagem {
+
+        background-position: center;
+    }
+
+
+    .personagens-hero-overlay {
+
+        background:
+            linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.95),
+                rgba(0, 0, 0, 0.25)
+            );
+    }
+
+
+    .personagens-hero-conteudo {
+
+        width: 88%;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .personagens-hero-conteudo > span {
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .personagens-hero-conteudo h1 {
+
+        font-size: clamp(48px, 14vw, 70px);
+    }
+
+
+    .personagens-hero-conteudo p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    .personagens-hero-btn {
+
+        padding: 13px 20px;
+
+        font-size: 10px;
+    }
+
+
+    /* INTRO */
+
+    .personagens-intro {
+
+        width: 88%;
+
+        margin:
+            70px auto
+            55px;
+    }
+
+
+    .personagens-intro h2 {
+
+        font-size: 30px;
+    }
+
+
+    .personagens-intro p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* MENU */
+
+    .personagens-grupos-nav {
+
+        width: 90%;
+
+        margin-bottom: 65px;
+    }
+
+
+    .personagens-grupos-nav a {
+
+        padding:
+            17px
+            13px;
+
+        font-size: 12px;
+    }
+
+
+    /* GRUPOS */
+
+    .grupo-personagens {
+
+        padding:
+            70px
+            0
+            80px;
+    }
+
+
+    .grupo-cabecalho {
+
+        width: 88%;
+
+        margin-bottom: 40px;
+    }
+
+
+    .grupo-cabecalho h2 {
+
+        font-size: 36px;
+    }
+
+
+    .grupo-cabecalho p {
+
+        font-size: 13px;
+    }
+
+
+    /* CARDS */
+
+    .personagens-cards {
+
+        width: 88%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+
+    .personagem-card {
+
+        width: 100%;
+
+        height: 310px;
+    }
+
+
+    .personagem-card:nth-child(4),
+    .personagem-card:nth-child(5) {
+
+        transform: none;
+    }
+
+
+    .personagem-card:nth-child(4):hover,
+    .personagem-card:nth-child(5):hover {
+
+        transform: translateY(-10px);
+    }
+
+
+    .personagem-card-bottom {
+
+        min-height: 70px;
+
+        padding: 9px 5px;
+    }
+
+
+    .personagem-card-bottom small {
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .personagem-card-bottom h3 {
+
+        font-size: 12px;
+    }
+
+
+    .personagem-img {
+
+        bottom: 40px;
+
+        width: 125%;
+    }
+
+
+    .personagem-ironman-img {
+
+        width: 115%;
+
+        bottom: 40px;
+    }
+
+
+    .personagem-capitao-img {
+
+        width: 125%;
+
+        bottom: 60px;
+    }
+
+
+    .personagem-thor-img {
+
+        width: 135%;
+
+        bottom: 55px;
+    }
+
+
+    .personagem-spiderman-img {
+
+        width: 110%;
+
+        bottom: 50px;
+    }
+
+
+    .personagem-hulk-img {
+
+        width: 140%;
+
+        bottom: 42px;
+    }
+
+
+    /* FINAL */
+
+    .personagens-final {
+
+        padding:
+            80px
+            20px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES MUITO PEQUENOS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .personagens-hero {
+
+        height: 450px;
+    }
+
+
+    .personagens-hero-conteudo h1 {
+
+        font-size: 43px;
+    }
+
+
+    .personagens-grupos-nav a {
+
+        font-size: 11px;
+
+        padding:
+            15px
+            10px;
+    }
+
+
+    .grupo-cabecalho h2 {
+
+        font-size: 32px;
+    }
+
+
+    .personagens-cards {
+
+        width: 90%;
+
+        gap: 14px;
+    }
+
+
+    .personagem-card {
+
+        height: 285px;
+    }
+
+
+    .personagem-card-bottom {
+
+        min-height: 65px;
+    }
+
+
+    .personagem-card-bottom h3 {
+
+        font-size: 11px;
+    }
+
+
+    .personagem-card-bottom small {
+
+        font-size: 6px;
+    }
+
+
+    .personagem-img {
+
+        bottom: 38px;
+    }
+
+}
+
+
+.link{
+  text-decoration: none;
+  color: black;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre</title>
+  <link rel="stylesheet" href="CSS/sobre.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="floating-item" aria-label="Item flutuante 1"><a href="index.html">Home</a></div>
+      <div class="floating-item" aria-label="Item flutuante 2"><a href="sobre.html">Sobre</a></div>
+      <div class="floating-item" aria-label="Item flutuante 3"><a href="atividades.html">Atividades</a></div>
+      <div class="floating-item" aria-label="Item flutuante 4"><a href="mural.html">Mural</a></div>
+      <div class="floating-item" aria-label="Item flutuante 5"><a href="noticias.html">Notícias</a></div>
+    </div>
+  </header>
+
+  <div class="nuvem" id="nuvem">Imaginação Criativa</div>
+
+  <div class="popup-container" id="popupContainer">
+    <div class="fundo-clique" id="fundoClique"></div>
+    <div class="opcoes" id="opcoes">
+      <button class="opcao" data-id="1">Criatividade</button>
+      <button class="opcao" data-id="2">Imaginação</button>
+      <button class="opcao" data-id="3">Inspiração</button>
+      <button class="opcao" data-id="4">Expressão</button>
+      <button class="opcao" data-id="5">Liberdade</button>
+    </div>
+  </div>
+
+  <div class="popup-detalhe" id="popupDetalhe">
+    <div class="popup-conteudo">
+      <h2 id="tituloPopup">Título</h2>
+      <p id="textoPopup">Texto explicativo da opção.</p>
+      <button onclick="popupDetalhe.style.display='none'">Fechar</button>
+    </div>
+  </div>
+
+  <img src="Estrela1.svg" class="estrela" style="top: 50px; left: 100px;">
+  <img src="Estrela2.svg" class="estrela" style="top: 57%; left: 250px;">
+  <img src="Estrela3.svg" class="estrela" style="top: 40%; left: 1000px;">
+  <img src="Estrela4.svg" class="estrela" style="top: 30%; left: 550px;">
+  <img src="Estrela5.svg" class="estrela" style="top: 150px; left: 300px;">
+  <img src="Estrela6.svg" class="estrela" style="top: 200px; left: 50px;">
+  <img src="Estrela7.svg" class="estrela" style="top: 130px; left: 800px;">
+  <img src="Estrela8.svg" class="estrela" style="top: 20%; left: 1200px;">
+  <img src="Estrela9.svg" class="estrela" style="top: 47%; left: 1300px;">
+
+  <img src="Desktopx.svg" class="efeitin imagem-fundo" alt="Torre SVG">
+
+  <script>
+    const nuvem = document.getElementById("nuvem");
+    const popupContainer = document.getElementById("popupContainer");
+    const fundoClique = document.getElementById("fundoClique");
+    const popupDetalhe = document.getElementById("popupDetalhe");
+    const tituloPopup = document.getElementById("tituloPopup");
+    const textoPopup = document.getElementById("textoPopup");
+
+    const conteudos = {
+      1: { titulo: "Criatividade", texto: "Explorar ideias além do óbvio." },
+      2: { titulo: "Imaginação", texto: "Transformar pensamentos em mundos novos." },
+      3: { titulo: "Inspiração", texto: "Fontes que acendem sua mente." },
+      4: { titulo: "Expressão", texto: "Traduzir sentimentos em formas visuais." },
+      5: { titulo: "Liberdade", texto: "Sem limites para criar." }
+    };
+
+    nuvem.addEventListener("click", () => {
+      nuvem.classList.add("expandida");
+      popupContainer.style.display = "block";
+    });
+
+    document.querySelectorAll(".opcao").forEach(botao => {
+      botao.addEventListener("click", (e) => {
+        const id = e.target.dataset.id;
+        tituloPopup.textContent = conteudos[id].titulo;
+        textoPopup.textContent = conteudos[id].texto;
+        popupDetalhe.style.display = "flex";
+      });
+    });
+
+    fundoClique.addEventListener("click", () => {
+      popupContainer.style.display = "none";
+      popupDetalhe.style.display = "none";
+      nuvem.classList.remove("expandida");
+    });
+
+    document.addEventListener("click", (e) => {
+      const clicouFora = !nuvem.contains(e.target) &&
+                         !popupContainer.contains(e.target) &&
+                         !popupDetalhe.contains(e.target);
+      if (clicouFora) {
+        popupContainer.style.display = "none";
+        popupDetalhe.style.display = "none";
+        nuvem.classList.remove("expandida");
+      }
+    });
+  </script>
+
+</body>
+</html>

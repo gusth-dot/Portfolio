@@ -1,0 +1,2268 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 90px;
+}
+
+/* ===== SCROLLBAR ===== */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: red #111;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darkred;
+}
+
+/* =========================================================================================================================
+ CABEÇALHO 
+======================================================================================================================== */
+#cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+
+  position: fixed; /* fixa no topo */
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 1000;
+
+  background: rgb(178, 0, 0);
+
+  transition: transform 0.4s ease;
+
+  padding-bottom: 1%;
+}
+
+body.dark-mode #cabecalho{
+  background: rgb(118, 0, 0);
+}
+
+body.dark-mode .cor-cabecalho{
+  background: rgb(118, 0, 0);
+}
+body.dark-mode p{
+  color: white;
+}
+
+/* ESCONDIDO */
+#cabecalho.hide {
+  transform: translateY(-100%);
+}
+.cor-cabecalho{
+  background-color: rgb(178, 0, 0);
+}
+.link-cabecalho:hover{
+  color: #ffd000;
+  transition: 0.3s;
+}
+
+/* Linha animada*/
+.link-cabecalho {
+  position: relative;
+  display: inline-block;
+
+  text-decoration: none;
+  color: white;
+}
+
+/* Linha abaixo da opção */
+.link-cabecalho::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 3px;
+
+  background: #ffd000;
+
+  transition: width 0.35s ease;
+
+  border-radius: 2px;
+}
+
+/* Cresce da direita para a esquerda */
+.link-cabecalho:hover::after {
+  width: 100%;
+}
+
+.login {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.login p {
+    margin: 0;
+    color: white;
+    cursor: pointer;
+
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+.login p:hover {
+    color: #ffd000;
+}
+
+.menu-item{
+  margin-top: 1%;
+  flex-shrink: 0;
+}
+.menu-item > p {
+  font-size: clamp(1.1rem, 1.2vw, 1.1rem);
+  cursor: pointer;
+  color: white;
+}
+.menu-item h2{
+  margin: 0;
+  text-align: center;
+}
+.menu-item .categoria{
+  font-size: 80%;
+}
+.link-cabecalho{
+  text-decoration: none;
+  color: white;
+}
+#logo {
+  width: 12vw;
+  margin-left: 3vw;
+}
+
+/* Notícias */
+
+.notícias{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+  margin: 0 auto;
+  justify-content: center;
+}
+.noticia{
+  width: 21%;
+  cursor: pointer;
+  margin-top: 2%;
+}
+.noticia p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+.noticia:hover{
+  color: red;
+}
+.noticia img{
+  width: 100%;  /* 🔥 ocupa o card */
+  
+  max-height: 70%;
+  display: block;
+  border-radius: 2%;
+  object-fit: cover;
+}
+.categoria{
+  margin: 0;
+  color: gray;
+  cursor: pointer;
+  margin-top: 2%;
+}
+.category{
+  display: flex; 
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 1%;
+}
+.category p{
+  margin: 0;
+}
+.category p:hover{
+  color: red;
+  transform: scale(1.1);
+  transition: 0.3s
+}
+.option::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* distância da linha para o texto */
+  width: 0%; /* começa com 0 */
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  transition: width 0.3s ease; /* animação suave */
+}
+.option:hover::after{
+  width: 100%;
+}
+#opcoes{
+  display: flex;
+  gap: 2%;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+#opcoes p {
+  margin: 0 !important;
+}
+/* Filmes */
+.filmes{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.filme{
+  width: 12%;
+}
+.filme img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.filme:hover{
+  color: red;
+  transition: 0.4s;
+}
+.filme > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 1%;
+}
+
+
+/* Quadrinhos */
+
+.quadrinhos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.quadrinho{
+  width: 12%;
+  
+}
+.quadrinho img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 3%;
+  border: 1px solid black;
+}
+.quadrinho:hover{
+  color: red;
+  transition: 0.4s;
+}
+.quadrinho > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 2%;
+}
+
+/* Series */
+
+.series{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.serie{
+  width: 12%;
+}
+.serie img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.serie:hover{
+  color: red;
+  transition: 0.4s;
+}
+.serie > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 1%;
+}
+
+/* Jogos */
+.jogos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%; 
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+.jogo{
+  width: 12%;
+}
+.jogo img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.jogo:hover{
+  color: red;
+  transition: 0.4s;
+}
+.jogo > p{
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  margin: 1%;
+}
+
+/* ===== Personagens ===== */
+/* CONTAINER */
+.cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 3%;
+    margin-top: 2%;
+}
+
+/* CARD */
+.card{
+    position:relative;
+
+    width: clamp(180px, 13vw, 250px);
+    height: clamp(280px, 35vh, 340px);
+
+    border-radius: 20px 0 0 0;
+
+    display:flex;
+    justify-content:flex-end;
+    flex-direction:column;
+
+    overflow:visible;
+
+    transition:.35s;
+
+    margin: 9vh 0;
+}
+
+/* PARTE SUPERIOR */
+.card-top{
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+    height:240px;
+
+    border-radius: 20px 5px 0 0;
+
+    z-index:1;
+}
+
+/* PARTE INFERIOR */
+.card-bottom{
+    position:relative;
+
+    width:100%;
+    height: clamp(70px, 10vh, 90px);
+
+    border-radius: 0 0 20px 5px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-weight:bold;
+
+    font-size: 15px;
+
+    z-index:3;
+}
+
+/* IMAGENS */
+/* IMAGEM PADRÃO */
+.card img{
+    position:absolute;
+
+    width:190px;
+
+    left:50%;
+    transform:translateX(-50%);
+
+    bottom:40px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    transition:.4s ease;
+}
+
+/* TAMANHO ESPECÍFICO DO HOMEM DE FERRO */
+.homem-de-ferro-image{
+    width:110% !important;
+}
+
+/* HOVER */
+.card:hover .homem-de-ferro-image{
+    transform:translateX(-50%) scale(1.08);
+}
+
+
+.capitao-america-image{
+  width: 121% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .capitao-america-image{
+    transform:translateX(-50%) scale(1.08);
+}
+
+
+.thor-image{
+  width: 128% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .thor-image{
+    transform:translateX(-53%) scale(1.08);
+}
+
+.homem-aranha-image{
+  width: 99% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .homem-aranha-image{
+  transform:translateX(-50%) scale(1.08);
+}
+
+.hulk-image{
+  width: 130% !important;
+  bottom: 80px !important;
+  bottom: 70px !important;
+}
+.card:hover .hulk-image{
+  transform:translateX(-50%) scale(1.08);
+}
+
+/* ===== CORES ===== */
+
+.ironman .card-top{
+    background:#920000;
+}
+
+.ironman .card-bottom{
+    background:#ff1b1b;
+}
+
+/* Capitão */
+
+.capitao .card-top{
+    background:#1f2538;
+}
+
+.capitao .card-bottom{
+    background:#343b49;
+}
+
+/* Thor */
+
+.thor .card-top{
+    background:#5e0d0d;
+}
+
+.thor .card-bottom{
+    background:#3b3333;
+}
+
+/* Homem Aranha */
+
+.spiderman .card-top{
+    background:#ff1b1b;
+}
+
+.spiderman .card-bottom{
+    background:#09a7df;
+}
+
+/* Hulk */
+
+.hulk .card-top{
+    background:#98a44f;
+}
+
+.hulk .card-bottom{
+    background:#313b47;
+}
+
+/* HOVER */
+
+.card:hover{
+    transform:translateY(-8px);
+    transition:.3s;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgb(232, 232, 232);
+  padding: 2%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: 0.3s ease;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== SETA ===== */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  transform: translateX(-50%) translateY(10px);
+
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgb(0, 0, 0);
+
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  filter: drop-shadow(0 -2px 5px rgba(0,0,0,0.2));
+}
+
+/* ===== HOVER ===== */
+.menu-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-item:hover .dropdown::before {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ===================== */
+/* MENU MOBILE */
+/* ===================== */
+
+.menu-toggle{
+  display: none;
+
+  font-size: 2rem;
+  color: white;
+
+  cursor: pointer;
+
+  margin-left: auto;
+
+  z-index: 2000;
+
+  user-select: none;
+}
+
+/* ===================== */
+/* BOTÃO TEMA */
+/* ===================== */
+
+.theme-toggle{
+    display: flex;
+}
+
+.theme-toggle input{
+  display: none;
+}
+
+.toggle-label{
+  width: 65px;
+  height: 26px;
+
+  background: #e6e6e6;
+
+  border-radius: 999px;
+
+  display: block;
+
+  position: relative;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+/* Bolinha */
+.toggle-icon{
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  top: 1px;
+  left: 2px;
+
+  border-radius: 50%;
+
+  background: rgb(255, 255, 255);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  transition: .3s ease;
+}
+
+/* Tema claro */
+#theme-switch:checked + .toggle-label{
+  background: #343434;
+}
+
+/* Move a bolinha */
+#theme-switch:checked + .toggle-label .toggle-icon{
+  left: calc(100% - 26px);
+  background: rgb(32, 32, 32);
+}
+
+/* Troca o emoji */
+#theme-switch:checked + .toggle-label .toggle-icon::before{
+  content: "🌙";
+}
+
+.toggle-icon::before{
+  content: "☀️";
+}
+
+.dark-mode{
+  background: #121212;
+  color: white;
+}
+
+.dark-mode .dropdown{
+  background: #1e1e1e;
+}
+
+.dark-mode .categoria{
+  color: #bdbdbd;
+}
+
+.dark-mode .card-bottom{
+  color: white;
+}
+
+.header-actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 5%;
+    margin-right: 1%;
+
+    flex-shrink: 0;
+}
+
+/* ===================== */
+/* RESPONSIVO TABLET/MOBILE */
+/* ===================== */
+
+/* Quando a tela começar a ficar estreita */
+@media (max-width: 1200px) {
+
+    .card.hulk {
+        display: none;
+    }
+
+    .menu-item > p,
+    .menu-item > a {
+        font-size: 1rem;
+    }
+
+    .header-actions {
+        gap: 15px;
+        margin-right: 1.5%;
+    }
+
+    .login p {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 900px){
+
+  /* CABEÇALHO */
+  #cabecalho{
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+  }
+
+  /* LOGO */
+  #logo{
+    width: 120px;
+    margin: 0;
+  }
+
+  /* BOTÃO HAMBURGUER */
+  /* BOTÃO HAMBURGUER */
+  .menu-toggle{
+    display: block;
+
+      margin-left: auto;
+      margin-right: 0;
+
+      font-size: 2.5rem;
+      transition: ease 0.3s;
+  }
+
+
+  /* ESCONDE TUDO POR PADRÃO */
+  .menu-item,
+  .login,
+  .header-actions{
+    display: none;
+  }
+
+  /* MENU ABERTO */
+  #cabecalho.active .menu-item{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: ease 0.5s;
+  }
+
+  #cabecalho.active .header-actions{
+    display: flex;
+
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 0;
+    transition: ease 0.3s;
+  }
+
+  #cabecalho.active .login{
+    display: flex;
+    align-items: center;
+  }
+
+  /* TEXTO MENU */
+  .menu-item > p,
+  .menu-item > a{
+    margin: 0;
+    font-size: 1rem;
+  }
+
+
+  /* PERSONAGENS */
+  .cards{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    justify-items: center;
+  }
+
+  .card{
+    margin: 20px 0;
+  }
+
+  /* FILTROS */
+  .category{
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+  }
+
+  .theme-toggle{
+    display: none;
+  }
+
+  /* aparece quando o menu hambúrguer abre */
+  #cabecalho.active .theme-toggle{
+    display: flex;
+    margin-top: 5%;
+  }
+
+  .login{
+    margin: 0;
+    transform: translateY(2vh);
+  }
+
+  /* DROPDOWN MOBILE */
+  .dropdown{
+    position: static;
+
+    width: 100%;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: none;
+
+    display: none;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .dropdown::before{
+    display: none;
+  }
+
+  /* ABRIR DROPDOWN */
+  .menu-item.active .dropdown{
+    display: block;
+  }
+
+  /* GRIDS */
+  .notícias,
+  .filmes,
+  .quadrinhos,
+  .series,
+  .jogos{
+    gap: 15px;
+  }
+
+  .noticia,
+  .filme,
+  .quadrinho,
+  .serie,
+  .jogo{
+    width: 45%;
+  }
+
+  /* CATEGORY */
+  .category{
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  /* LOGIN */
+  #cabecalho.active .login{
+    padding-top: 20px;
+    margin: 0;
+  }
+  .container-mais{
+    margin-bottom: 20px;
+  }
+}
+/* ===================== */
+/* MOBILE PEQUENO */
+/* ===================== */
+
+@media (max-width: 600px){
+
+  #logo{
+    width: 100px;
+  }
+
+  .menu-toggle{
+    font-size: 2.2rem;
+  }
+
+  /* LISTAS EM 1 COLUNA */
+  .notícias,
+  .filmes,
+  .quadrinhos,
+  .series,
+  .jogos,
+  .cards{
+    grid-template-columns: 1fr;
+  }
+
+  .dropdown{
+    padding: 20px;
+  }
+
+  .menu-item > p,
+  .menu-item > a{
+    font-size: 0.95rem;
+  }
+
+  .toggle-label{
+    width: 65px;
+    height: 28px;
+  }
+
+  .toggle-icon{
+    width: 24px;
+    height: 24px;
+  }
+
+  .login p{
+    font-size: 1rem;
+    transform: translateY(-2vh);
+  }
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/* =======================================================================================
+   HERO - JOGOS MARVEL
+   Classes exclusivas para não interferir no restante do site
+   =================================================================================== */
+
+.hero-jogos {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    min-height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(130, 0, 0, 0.45),
+            transparent 45%
+        ),
+        linear-gradient(
+            90deg,
+            #090909 0%,
+            #160000 45%,
+            #330000 100%
+        );
+
+    isolation: isolate;
+}
+
+
+/* ============================================================
+   CONTEÚDO
+   ============================================================ */
+
+.hero-jogos-conteudo {
+    position: relative;
+    z-index: 3;
+
+    width: 90%;
+    max-width: 1100px;
+
+    text-align: center;
+
+    transform: translateY(-5px);
+}
+
+
+.hero-jogos-tag {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 4px;
+
+    color: #ffffff;
+
+    opacity: 0.9;
+}
+
+
+.hero-jogos-conteudo h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 6vw, 78px);
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+
+.hero-jogos-conteudo p {
+    max-width: 550px;
+
+    margin: 20px auto 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: clamp(15px, 1.5vw, 19px);
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   IMAGEM
+   ============================================================ */
+
+.hero-jogos-imagem {
+    position: absolute;
+
+    right: -8vw;
+    top: 0;
+
+    width: 60%;
+    height: 100%;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.hero-jogos-imagem::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #090909 0%,
+            rgba(9, 9, 9, 0.75) 12%,
+            rgba(9, 9, 9, 0.15) 45%,
+            rgba(9, 9, 9, 0) 75%
+        );
+
+    z-index: 2;
+}
+
+
+.hero-jogos-imagem img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 0.95;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .hero-jogos {
+        height: 390px;
+    }
+
+    .hero-jogos-imagem {
+        width: 75%;
+    }
+
+    .hero-jogos-conteudo {
+        width: 88%;
+    }
+
+    .hero-jogos-conteudo h1 {
+        font-size: clamp(40px, 7vw, 62px);
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    .hero-jogos {
+        height: 420px;
+
+        align-items: flex-end;
+
+        background:
+            linear-gradient(
+                180deg,
+                #160000 0%,
+                #090909 100%
+            );
+    }
+
+
+    .hero-jogos-imagem {
+        width: 100%;
+        height: 75%;
+
+        top: 0;
+        right: 0;
+    }
+
+
+    .hero-jogos-imagem::after {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(9, 9, 9, 0) 20%,
+                rgba(9, 9, 9, 0.35) 50%,
+                #090909 100%
+            );
+    }
+
+
+    .hero-jogos-imagem img {
+        object-position: center top;
+    }
+
+
+    .hero-jogos-conteudo {
+        width: 90%;
+
+        padding-bottom: 45px;
+
+        transform: none;
+    }
+
+
+    .hero-jogos-tag {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
+    }
+
+
+    .hero-jogos-conteudo h1 {
+        font-size: 42px;
+    }
+
+
+    .hero-jogos-conteudo p {
+        margin-top: 12px;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+}
+
+
+/* ============================================================
+   CELULARES PEQUENOS
+   ============================================================ */
+
+@media (max-width: 400px) {
+
+    .hero-jogos {
+        height: 390px;
+    }
+
+
+    .hero-jogos-conteudo h1 {
+        font-size: 36px;
+    }
+
+
+    .hero-jogos-conteudo p {
+        font-size: 13px;
+    }
+
+}
+
+
+/*=======================================================================================
+NOVIDADES - JOGOS
+=======================================================================================*/
+
+.container-ultimas {
+    display: grid;
+
+    /* Cada card mantém 180px, mas quebra para a próxima linha */
+    grid-template-columns: repeat(auto-fit, 180px);
+
+    gap: 3vh 1vw;
+    justify-content: center;
+
+    margin-top: 3vh;
+}
+
+
+/*=======================================================================================
+CARD
+=======================================================================================*/
+
+.jogos-melhores {
+    width: 180px;
+    cursor: pointer;
+
+    /* Estado inicial do fade-in */
+    opacity: 0;
+    transform: translateX(-80px);
+    filter: blur(6px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22, .61, .36, 1),
+        filter .8s ease;
+}
+
+
+/* Estado depois que aparece */
+
+.jogos-melhores.show {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+
+/*IMAGEM*/
+
+.jogos-melhores img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+
+    /* Reserva o espaço da borda para não empurrar nada */
+    border: 2px solid transparent;
+    box-sizing: border-box;
+
+    transition:
+        transform .3s ease-in-out,
+        box-shadow .5s ease,
+        border-color .5s ease;
+}
+
+
+/*TÍTULO*/
+
+.jogos-melhores h4 {
+    margin-top: 2vh;
+}
+
+
+/*HOVER DO CARD*/
+
+.jogos-melhores:hover {
+    color: red;
+}
+
+
+/*HOVER DA IMAGEM*/
+
+.jogos-melhores:hover img {
+    transform: translateY(-1.4vh);
+
+    box-shadow:
+        0 0 25px rgba(230, 36, 41, .8);
+
+    border-color: red;
+}
+
+/*Span*/
+.jogos-melhores span{
+    color: gray;
+    font-size: 0.9rem;
+}
+
+/*TABLET*/
+
+@media (max-width: 900px) {
+
+    .container-ultimas {
+        grid-template-columns: repeat(auto-fit, 180px);
+        gap: 3vh 15px;
+    }
+}
+
+
+/*CELULAR*/
+
+@media (max-width: 600px) {
+
+    .container-ultimas {
+        grid-template-columns: repeat(2, 180px);
+        justify-content: center;
+        gap: 30px 12px;
+    }
+}
+
+
+/*CELULAR PEQUENO*/
+
+@media (max-width: 400px) {
+
+    .container-ultimas {
+        grid-template-columns: 180px;
+        justify-content: center;
+    }
+}
+
+
+
+/*==================================================================================
+JOGO EM DESTAQUE
+===================================================================================*/
+
+.games-destaque {
+    position: relative;
+    width: 90%;
+    max-width: 1250px;
+    min-height: 500px;
+    margin: 12vh auto;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #090909;
+    border-radius: 10px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+body.dark-mode .games-destaque{
+    box-shadow: 5px 15px 15px rgba(82, 81, 81, 0.3);
+}
+
+.games-destaque-imagem {
+    width: 55%;
+    height: 500px;
+    position: relative;
+}
+
+
+.games-destaque-imagem::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent 45%,
+        #090909 100%
+    );
+}
+
+
+.games-destaque-imagem img {
+    width: 100%;
+    height: 100%;
+    
+    display: block;
+
+    object-fit: cover;
+    object-position: center 29%;
+}
+
+
+.games-destaque-conteudo {
+    width: 45%;
+
+    padding: 50px;
+
+    color: white;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.games-destaque-conteudo > span {
+    color: #e62429;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.games-destaque-conteudo h2 {
+    margin: 12px 0 18px;
+
+    font-size: clamp(32px, 4vw, 55px);
+    line-height: 1.05;
+}
+
+
+.games-destaque-conteudo p {
+    max-width: 450px;
+
+    color: #cfcfcf;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+.games-destaque-info {
+    display: flex;
+    gap: 35px;
+
+    margin: 30px 0;
+}
+
+
+.games-destaque-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.games-destaque-info small {
+    color: #888;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+
+.games-destaque-info strong {
+    font-size: 13px;
+}
+
+
+.games-botao {
+    border: none;
+
+    padding: 13px 27px;
+
+    background: #e62429;
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.games-botao:hover {
+    transform: translateY(-3px);
+    background: #c91d22;
+}
+
+
+/*==================================================================================
+TÍTULOS
+===================================================================================*/
+
+.games-titulo {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+
+.games-titulo > span {
+    color: #e62429;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.games-titulo h2 {
+    margin: 10px 0;
+
+    font-size: clamp(30px, 4vw, 45px);
+}
+
+
+.games-titulo p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 16px;
+}
+
+
+/*==================================================================================
+UNIVERSOS MARVEL
+===================================================================================*/
+
+.games-estilos {
+    width: 100%;
+
+    margin: 12vh 0;
+}
+
+
+.games-estilos-grid {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.games-estilo {
+    position: relative;
+
+    min-height: 360px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+.games-estilo-imagem {
+    position: absolute;
+
+    inset: 0;
+}
+
+
+.games-estilo-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.games-estilo:hover .games-estilo-imagem img {
+    transform: scale(1.08);
+}
+
+
+.games-estilo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        transparent 20%,
+        rgba(0, 0, 0, 0.95) 100%
+    );
+}
+
+
+.games-estilo-conteudo {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    z-index: 2;
+
+    padding: 28px;
+
+    color: white;
+}
+
+
+.games-estilo-conteudo span {
+    color: #e62429;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+.games-estilo-conteudo h3 {
+    margin: 8px 0;
+
+    font-size: 25px;
+}
+
+
+.games-estilo-conteudo p {
+    margin: 0;
+
+    max-width: 300px;
+
+    color: #d0d0d0;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/*==================================================================================
+PRÓXIMOS LANÇAMENTOS
+===================================================================================*/
+
+.games-lancamentos {
+    width: 100%;
+
+    margin: 14vh 0;
+}
+
+
+.games-titulo-lancamentos {
+    margin-bottom: 70px;
+}
+
+
+.games-timeline {
+    position: relative;
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.games-linha {
+    position: absolute;
+
+    top: 25px;
+    left: 5%;
+    right: 5%;
+
+    height: 2px;
+
+    background: #ddd;
+
+    z-index: 0;
+}
+
+
+.games-evento {
+    position: relative;
+
+    width: 33%;
+
+    z-index: 1;
+}
+
+
+.games-ponto {
+    width: 16px;
+    height: 16px;
+
+    margin: 17px auto 25px;
+
+    border-radius: 50%;
+
+    background: #e62429;
+
+    border: 4px solid white;
+
+    box-shadow: 0 0 0 2px #e62429;
+}
+
+
+.games-evento-card {
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+
+    border-radius: 8px;
+}
+
+
+.games-evento-card:hover {
+    transform: translateY(-7px);
+}
+
+
+.games-evento-card img {
+    width: 100%;
+    height: 230px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.games-evento-card > div {
+    padding: 18px;
+}
+
+
+.games-ano {
+    display: block;
+
+    margin: 18px 18px 0;
+
+    color: #e62429;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.games-evento-card h3 {
+    margin: 0 0 7px;
+
+    font-size: 19px;
+}
+
+
+.games-evento-card p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+/* ============================================================
+   PRÓXIMOS LANÇAMENTOS - MODO ESCURO
+   ============================================================ */
+
+body.dark-mode .games-evento-card {
+    background: #300606;
+    border-color: #4a0a0a;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .games-evento-card h3 {
+    color: white;
+}
+
+body.dark-mode .games-evento-card p {
+    color: #c9a5a5;
+}
+
+body.dark-mode .games-ano {
+    color: #ff3b3b;
+}
+
+/*==================================================================================
+HISTÓRIA
+===================================================================================*/
+
+.games-historia {
+    position: relative;
+
+    width: 100%;
+    min-height: 350px;
+
+    margin-top: 12vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95),
+            rgba(60, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.95)
+        );
+}
+
+
+.games-historia::before {
+    content: "MARVEL";
+
+    position: absolute;
+
+    font-size: clamp(130px, 25vw, 350px);
+    font-weight: 900;
+
+    color: rgba(255, 255, 255, 0.025);
+
+    white-space: nowrap;
+}
+
+
+.games-historia-conteudo {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 700px;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+.games-historia-conteudo span {
+    color: #e62429;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.games-historia-conteudo h2 {
+    margin: 12px 0 18px;
+
+    font-size: clamp(30px, 4vw, 48px);
+}
+
+
+.games-historia-conteudo p {
+    margin: auto;
+
+    max-width: 650px;
+
+    color: #c8c8c8;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+body.dark-mode .games-historia {
+    background: linear-gradient(
+        90deg,
+        #120000,
+        #300606,
+        #120000
+    );
+}
+/*==================================================================================
+TABLET
+===================================================================================*/
+
+@media (max-width: 900px) {
+
+    .games-destaque {
+        width: 92%;
+        min-height: 430px;
+    }
+
+
+    .games-destaque-imagem {
+        width: 50%;
+        height: 430px;
+    }
+
+
+    .games-destaque-conteudo {
+        width: 50%;
+        padding: 30px;
+    }
+
+
+    .games-destaque-info {
+        gap: 20px;
+    }
+
+
+    .games-estilos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .games-estilo:last-child {
+        grid-column: 1 / -1;
+    }
+
+
+    .games-timeline {
+        gap: 15px;
+    }
+
+}
+
+
+/*==================================================================================
+CELULAR
+===================================================================================*/
+
+@media (max-width: 600px) {
+
+    .games-destaque {
+        width: 92%;
+
+        min-height: 650px;
+
+        display: flex;
+        flex-direction: column;
+
+        margin: 9vh auto;
+    }
+
+
+    .games-destaque-imagem {
+        width: 100%;
+        height: 350px;
+    }
+
+
+    .games-destaque-imagem::after {
+        background: linear-gradient(
+            180deg,
+            transparent 45%,
+            #090909 100%
+        );
+    }
+
+
+    .games-destaque-conteudo {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 25px;
+    }
+
+
+    .games-destaque-conteudo h2 {
+        font-size: 34px;
+    }
+
+
+    .games-destaque-conteudo p {
+        font-size: 14px;
+    }
+
+
+    .games-destaque-info {
+        gap: 20px;
+
+        margin: 22px 0;
+    }
+
+
+    .games-estilos-grid {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .games-estilo:last-child {
+        grid-column: auto;
+    }
+
+
+    .games-estilo {
+        min-height: 320px;
+    }
+
+
+    .games-titulo {
+        width: 90%;
+    }
+
+
+    .games-titulo h2 {
+        font-size: 30px;
+    }
+
+
+    .games-titulo p {
+        font-size: 14px;
+    }
+
+
+    .games-timeline {
+        width: 85%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+
+    .games-linha {
+        top: 0;
+        bottom: 0;
+        left: 7px;
+        right: auto;
+
+        width: 2px;
+        height: auto;
+    }
+
+
+    .games-evento {
+        width: 100%;
+
+        display: flex;
+        align-items: flex-start;
+    }
+
+
+    .games-ponto {
+        flex-shrink: 0;
+
+        margin: 20px 20px 0 0;
+    }
+
+
+    .games-evento-card {
+        flex: 1;
+    }
+
+
+    .games-evento-card img {
+        height: 180px;
+    }
+
+
+    .games-historia {
+        min-height: 300px;
+    }
+
+
+    .games-historia-conteudo h2 {
+        font-size: 32px;
+    }
+
+
+    .games-historia-conteudo p {
+        font-size: 14px;
+    }
+
+}
+
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  width: 100%;
+  min-height: 289px;
+
+  background-color: #b30000;
+  background-image: url("../images/cristais-rodape.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8%;
+  flex-wrap: wrap; /* 🔥 RESPONSIVO */
+}
+
+.rodape p{
+  margin-bottom: 8%;
+}
+/* LOGO */
+#logo-rodape {
+  width: 250px;
+  margin-right: -40px;
+}
+
+.link-rodape {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.link-rodape:hover {
+  color: #ff4d4d;
+}
+
+/* UNLIMITED */
+.unlimited-col {
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+#unlimited-rodape {
+  width: 120px;
+}
+
+/* REDES */
+.social-col {
+  flex-wrap: wrap;
+
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  
+}
+
+.icons img {
+  width: auto;
+  height: 30px;
+  opacity: 50%;
+  transition: 0.3s ease-in-out;
+  margin-top: 15px;
+  margin-left: 5px;
+  
+  -webkit-user-drag: none;
+  user-select: none; /* Evita seleção */
+  -webkit-user-select: none; /* Safari */
+}
+
+.icons img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ========================= */
+/* 📱 RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .rodape {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding-bottom: 3%;
+  }
+
+  .col {
+    align-items: center;
+  }
+
+  .unlimited-col {
+    flex-direction: column;
+  }
+
+  .social-col {
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  #logo-rodape {
+    width: 160px;
+  }
+
+  #unlimited-rodape {
+    width: 90px;
+  }
+
+  .icons img {
+    height: 28px;
+    margin-bottom: 30px;
+  }
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+/* ESTADO INICIAL */
+.fade {
+  opacity: 0;
+  transform: translateY(30px); /* vem de baixo */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* QUANDO ENTRA NA TELA */
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-item {
+  opacity: 0;
+  transform: translateX(60px); /* vem da direita */
+  transition: all 0.6s ease;
+}
+
+.fade-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}

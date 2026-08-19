@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.cabecalho {
+    background-color: rgb(249, 226, 190);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Alinha o conteúdo no centro horizontalmente */
+    z-index: 2;
+}
+#ctt {
+    background-color: rgb(249, 226, 190);
+    position: fixed;
+    top: 70px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 75%;  /* Caso queira que ocupe toda a largura da tela */
+    z-index: 2;  /* Garante que o "ctt" fique acima dos outros elementos */
+    margin-top: -55px;
+}
+#ctt li {
+    margin: 0 15px;
+}
+
+#ctt li a {
+    color: rgb(181, 127, 127);
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding: 10px;
+}
+
+#ctt li a:hover {
+    background-color: rgb(240, 204, 158); /* Cor de fundo no hover */
+    transition: background-color 0.3s ease;
+}
+.titulo-container {
+    margin-top: 40px; /* Espaçamento entre o topo e o título */
+}
+
+.titulo {
+    font-size: 36px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(181, 127, 127);
+    margin: 0;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: -100px;
+    align-self: flex-start; /* Alinha a logo à esquerda */
+}
+
+.menu {
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    padding: 0; 
+    gap: 20px;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 20px;
+    align-items: center;
+    position: relative;
+}
+
+.menu li a {
+    color: rgb(181, 127, 127);
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.menu li a:hover {
+    background-color: rgb(240, 204, 158);
+    transition: .6s;
+}
+#divBusca {
+    background-color: rgb(181, 127, 127);
+    border: solid 1px;
+    border-radius: 15px;
+    width: 220px;
+    height: 35px;
+    position: fixed;  /* Tornando o "divBusca" fixo */
+    right: 18px;
+    top: 50%;  /* Centraliza verticalmente em relação à tela */
+    transform: translateY(-50%);  /* Corrige o alinhamento vertical */
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    top: 15%;
+}
+/* Ajustes no campo de busca (#txtBusca) */
+#txtBusca {
+    float: left;
+    background-color: transparent;
+    padding-left: 5px;
+    font-style: italic;
+    font-size: 16px;
+    border: none;
+    height: 32px;
+    width: 165px; /* Mantivemos a largura reduzida */  
+    
+}
+#btnBusca {
+    width: 25px; /* Mantém o tamanho do ícone */
+    position: fixed;
+    margin-top: 4px;
+    margin-left: 15px;
+    z-index: 10;
+    position: fixed;
+    top: 5%;
+    right: 18px;
+    z-index: 10;
+}
+.title{
+    margin-top: 180px;
+    text-align: center;
+}
+.img-txt{
+display: flex;
+}
+.img{
+    width: 300px;
+    height: auto;
+}
+.textp{
+    margin: 10px;
+    font-size: 20px;
+}
+.subtitulo{
+    text-align: center;
+}
+.linha{
+    width: 90%;
+    margin: 40px auto 40px;
+}
+.saiba-mais{
+background-color: rgb(240, 204, 158);
+width: 500px;
+height: 40px;
+margin: 0 auto 40px;
+text-align: center;
+text-decoration: none;
+font-size: 30px;
+border-radius: 10px;
+}
+.saiba-mais:hover{
+background-color: rgb(181, 127, 127);
+width: 510px;
+transition: 0.3s;
+}
+.maisp{
+    text-decoration: none;
+    color: black;
+    }

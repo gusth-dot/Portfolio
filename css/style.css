@@ -1,0 +1,748 @@
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+    --bg: #080b12;
+    --bg-secondary: #0d121c;
+    --card: #131a27;
+    --card-hover: #182132;
+
+    --text: #f1f5f9;
+    --muted: #8f9aaa;
+
+    --accent: #e50914;
+    --accent-dark: #b20710;
+    --accent-light: #ff2631;
+
+    --border: rgba(255, 255, 255, 0.07);
+    --border-hover: rgba(229, 9, 20, 0.45);
+
+    --shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45);
+
+    --shadow-hover:
+        0 25px 60px rgba(0, 0, 0, 0.65);
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(229, 9, 20, 0.10),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #080b12 0%,
+            #0b1019 50%,
+            #080b12 100%
+        );
+
+    color: var(--text);
+
+    display: flex;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+#app {
+    width: 100%;
+    max-width: 1000px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.01)
+        ),
+        var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 16px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+    gap: 16px;
+
+    align-items: center;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--border-hover);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.015)
+        ),
+        var(--card-hover);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+#avatar {
+    width: 68px;
+    height: 68px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    object-fit: cover;
+
+    border: 2px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover #avatar {
+    transform: scale(1.04);
+
+    border-color:
+        rgba(229, 9, 20, 0.5);
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.meta {
+    flex: 1;
+    min-width: 0;
+}
+
+h1 {
+    margin: 0;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+
+    color: var(--text);
+}
+
+p {
+    margin: 5px 0 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   CAROUSEL
+========================================================= */
+
+.carousel {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 8px 2px 18px;
+}
+
+
+/* =========================================================
+   SLIDES
+========================================================= */
+
+#slides {
+    display: flex;
+
+    gap: 16px;
+
+    width: max-content;
+
+    will-change: transform;
+
+    user-select: none;
+
+    cursor: grab;
+
+    touch-action: pan-y;
+
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#slides.dragging {
+    cursor: grabbing;
+
+    transition: none;
+}
+
+
+/* =========================================================
+   SLIDE
+========================================================= */
+
+.slide {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    width: 280px;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c2433,
+            #121925
+        );
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35);
+
+    transform:
+        scale(0.94);
+
+    opacity: 0.68;
+
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   SLIDE HOVER
+========================================================= */
+
+.slide:hover {
+    transform:
+        scale(1.04)
+        translateY(-5px);
+
+    opacity: 1;
+
+    border-color:
+        rgba(229, 9, 20, 0.5);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(229, 9, 20, 0.08);
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   IMAGEM
+========================================================= */
+
+.slide img {
+    width: 100%;
+    height: 160px;
+
+    object-fit: cover;
+
+    display: block;
+
+    pointer-events: none;
+
+    -webkit-user-drag: none;
+
+    user-select: none;
+
+    filter:
+        blur(1px)
+        brightness(0.82);
+
+    transform: scale(1.02);
+
+    transition:
+        filter 0.4s ease,
+        transform 0.5s ease;
+}
+
+
+/* imagem no hover */
+
+.slide:hover img {
+    filter:
+        blur(0)
+        brightness(1);
+
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   GRADIENTE SOBRE IMAGEM
+========================================================= */
+
+.slide::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 0;
+
+    height: 160px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.02),
+            rgba(0, 0, 0, 0.18),
+            rgba(0, 0, 0, 0.5)
+        );
+}
+
+
+/* =========================================================
+   OVERLAY / TEXTO
+========================================================= */
+
+.overlay {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 13px 14px 15px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(28, 35, 51, 0.96),
+            rgba(17, 24, 39, 1)
+        );
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+#slides a {
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BOTÕES DO CARROSSEL
+========================================================= */
+
+.chev {
+    position: relative;
+
+    z-index: 5;
+
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 0;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    opacity: 0.8;
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.chev:hover {
+    opacity: 1;
+
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    transform: scale(1.06);
+
+    box-shadow:
+        0 8px 25px rgba(229, 9, 20, 0.3);
+}
+
+.chev:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    flex-direction: column;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border-radius: 11px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    outline: none;
+
+    background:
+        rgba(8, 12, 20, 0.8);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #697386;
+}
+
+input:focus,
+textarea:focus {
+    background:
+        rgba(10, 15, 25, 0.95);
+
+    border-color:
+        rgba(229, 9, 20, 0.65);
+
+    box-shadow:
+        0 0 0 3px rgba(229, 9, 20, 0.10);
+}
+
+textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    text-align: center;
+
+    padding: 10px 0 5px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080b12;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        #252d3b;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        var(--accent);
+}
+
+
+/* =========================================================
+   SELEÇÃO DE TEXTO
+========================================================= */
+
+::selection {
+    background: var(--accent);
+
+    color: white;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    #app {
+        gap: 16px;
+    }
+
+    .card {
+        padding: 14px;
+
+        border-radius: 15px;
+    }
+
+    #avatar {
+        width: 58px;
+        height: 58px;
+
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 17px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .carousel {
+        gap: 8px;
+
+        padding-bottom: 14px;
+    }
+
+    .slide {
+        width: min(280px, 78vw);
+    }
+
+    .chev {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 14px 10px;
+    }
+
+    .card {
+        gap: 12px;
+
+        padding: 12px;
+    }
+
+    #avatar {
+        width: 52px;
+        height: 52px;
+    }
+
+    .slide {
+        width: 78vw;
+
+        border-radius: 14px;
+    }
+
+    .slide img {
+        height: 150px;
+    }
+
+    .slide::after {
+        height: 150px;
+    }
+
+    .overlay {
+        padding: 11px 12px 13px;
+    }
+
+    .chev {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 10px;
+    }
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+    }
+}

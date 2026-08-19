@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="floating-item" aria-label="Item flutuante 1"><a href="index.html">Home</a></div>
+      <div class="floating-item" aria-label="Item flutuante 2"><a href="sobre.html">Sobre</a></div>
+      <div class="floating-item" aria-label="Item flutuante 3"><a href="atividades.html">Atividades</a></div>
+      <div class="floating-item" aria-label="Item flutuante 4"><a href="mural.html">Mural</a></div>
+      <div class="floating-item" aria-label="Item flutuante 5"><a href="noticias.html">Notícias</a></div>
+    </div>
+  </header>
+
+    <main class="Texto">
+      <div class="Estrutura">
+        <h1 class="Titulo1">Imaginação</h1>
+        <h1 class="Titulo2">Criativa</h1>
+        <p class="Titulo3">Transformando ideias as mundos possiveis</p>
+      </div>
+      <img class="Imagem" src="Imaginação Criativa.png" alt="">
+    </main>
+
+    <div id="lamp">
+      <img src="https://cdn-icons-png.flaticon.com/512/427/427735.png" alt="Lâmpada">
+    </div>
+  
+    <div id="cortina"></div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = document.querySelectorAll('.Navegação');
+
+      links.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault(); // impede o link de recarregar a página
+
+          // Remove classe 'ativo' de todos os links
+          links.forEach(l => l.classList.remove('ativo'));
+
+          // Adiciona 'ativo' no link clicado
+          this.classList.add('ativo');
+        });
+      });
+    });
+
+  document.getElementById("lamp").onclick = function () {
+    const lamp = document.getElementById("lamp");
+    const cortina = document.getElementById("cortina");
+    const home = document.getElementById("home");
+
+    lamp.classList.add("desce");
+
+    // Inicia fade-out da cortina
+    cortina.classList.add("fade-out");
+
+    setTimeout(() => {
+      lamp.classList.add("some");
+    }, 3000);
+
+    setTimeout(() => {
+      home.style.display = "block";
+    }, 3500);
+  };
+    </script>
+
+
+
+
+</body>
+</html>

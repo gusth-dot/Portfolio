@@ -1,0 +1,275 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-y: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    section.primeira {
+  height: 100vh;
+  background-color: rgba(0, 18, 43, 1);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column; /* mantém o cabeçalho acima e os itens no centro */
+}
+
+.cabecalho {
+  display: flex;
+  gap: 25px; /* espaço entre as opções */
+  padding: 20px;
+  margin-bottom: 35px;
+  margin-left: 540PX;
+  margin-top: 10px;
+}
+
+.itens {
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+}
+
+.imagem1 {
+  margin-right: 100px;
+  
+}
+
+#titulo {
+  font-size: 4em;
+  transform: translateY(-10px);
+}
+
+section.segunda {
+  background-color: #000000;
+  color: white;
+  font-size: 20px;
+  padding: 60px;
+}
+.fileira{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.opcao {
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* linha "invisível" inicialmente */
+.opcao::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* distância da linha para o texto */
+  width: 0%; /* começa com 0 */
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease; /* animação suave */
+}
+.opcao:hover::after {
+  width: 100%;
+}
+.link{
+  text-decoration: none;
+  color: white;
+}
+#tech{
+  width: 1800px;
+}
+.subtitulo{
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+#imghacker{
+  width: 400px;
+  transform: translateY(100px);
+}
+#trestipos{
+  font-size: 50px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+.rede{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../img/rede.png');
+  width: 550px;
+  height: 300px;
+  border: solid 2px;
+  background-size: cover; 
+  background-position: center; 
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.6s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.texto-principal{
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.texto-hover{
+ opacity: 0;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  transition: all 0.4s ease;
+  font-size: 25px;
+  margin-top: 10px;
+  display: grid;
+  place-items: center;
+  height: 200px;
+}
+.rede:hover {
+  width: 100%;
+  background-color: #1565c0;
+  transition: 0.6s ease;
+}
+.rede:hover .texto-principal {
+  opacity: 1;
+  transform: translate(-350px, -130px);
+}
+.rede:hover .texto-hover {
+  opacity: 1;
+  transform: translate(3px, 20px);
+}
+
+
+.host{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../img/host.png');
+  width: 550px;
+  height: 300px;
+  border: solid 2px;
+  background-size: cover; 
+  background-position: center; 
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.6s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.texto-principal{
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.texto-hover{
+ opacity: 0;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  transition: all 0.4s ease;
+  font-size: 25px;
+  margin-top: 10px;
+  display: grid;
+  place-items: center; /* centraliza vertical e horizontal */
+  height: 200px;
+}
+.host:hover {
+  width: 100%;
+  background-color: #1565c0;
+  transition: 0.6s ease;
+}
+.host:hover .texto-principal {
+  opacity: 1;
+   transform: translate(-350px, -130px);
+}
+.host:hover .texto-hover {
+  opacity: 1;
+   transform: translate(3px, 20px);
+}
+
+
+
+
+
+.nuvem{
+  position: relative;
+  background-image: url('../img/nuvem.png');
+  width: 550px;
+  height: 300px;
+  border: solid 2px;
+  background-size: cover; 
+  background-position: center; 
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.6s ease;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.texto-principall{
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+}
+.texto-hoverr{
+ opacity: 0;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  transition: all 0.4s ease;
+  font-size: 25px;
+  margin-top: 10px;
+  display: grid;
+  place-items: center; /* centraliza vertical e horizontal */
+  height: 200px;
+}
+.nuvem:hover {
+  width: 800px;
+  transition: 0.6s all ease;
+}
+.nuvem:hover .texto-principall {
+  opacity: 1;
+  transform: translate(-350px, -130px);
+}
+.nuvem:hover .texto-hoverr {
+   opacity: 1;
+   transform: translate(9px, 20px);
+}
+#globo{
+  transform: translateY(-60px);
+}
+#copylot{
+  width: 30px;
+  margin-top: 25px;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateX(50px); /* começa vindo da esquerda */
+  transition: opacity 1s ease, transform 0.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateX(0);
+}
